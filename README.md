@@ -75,7 +75,7 @@ Ahora, descomprimimos el archivo para moder manipularlo más con otros comandos,
 	gunzip *.gz
 	ls #se terminaron de descomprimir?
 	
-	cat epiddrad_5M_R1.fastq.gz
+	cat epiddrad_5M_R1.fastq
  	#y ahora?? :-O
  	
  Este es el problema principal con cualquier dato de secuenciación masiva, que simplemente los datos crudos no son visualizables, porque son demasiado grandes. Entonces, tenemos que observar los datos de a poco y con ciertos programas usando la línea de comando. Primero, intentemos el comando más simple:
@@ -85,7 +85,7 @@ Ahora, descomprimimos el archivo para moder manipularlo más con otros comandos,
  
  Para imprimir las primeras 20 líneas de un archivo:
  
-	head epiddrad_5M_R1.fastq -20 
+	head -20 epiddrad_5M_R1.fastq 
 
 Donde '-20' es un argumento para el programa `head`. Para imprimir entre las líneas 190 y 200, se puede escribir un programa sencillo utilizando `head` y `tail` junto con `|` (o mejor conocido como *'pipe'*). 
 
@@ -105,17 +105,12 @@ También podemos visualizar el archivo por partes utilizando `less`:
 >
 	man less # press q to quit
 
-
->Otro ejercicio usando `|` y otro programa, `cut`:
->
-	head -200 epiddrad_5M_R1.fastq | cut -c -30 
-
  
  Podemos usar el programa `wc`, o *word count* para contar el numero de líneas, por ejemplo, en un archivo. 
  
  	wc -l epiddrad_5M_R1.fastq 
  		
- Pero, esto no parece muy útil dado que no todas las líneas son secuencias... aunque podemos usar una simple division.... En todo caso, queremos contar el número de secuencias por un determinado barcode de secuencia conocida, y guardarlas luego en otro archivo, por lo que usamos: 
+ Pero, esto no parece muy útil dado que no todas las líneas son secuencias... aunque podemos usar una simple division (total lineas dividido entre cuatro nos daria el numero de secuencias).... En todo caso, ahora lo que queremos es contar el número de secuencias por un determinado barcode de secuencia conocida, y guardarlas luego en otro archivo, por lo que usamos: 
  
  	grep -c 'AAAAA' epiddrad_5M_R1.fastq
  	grep 'AAAAA' epiddrad_5M_R1.fastq > barcode.txt
@@ -129,7 +124,13 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
 
 > Otros ejercicios: 
 > 
-> - contar el número de secuencias únicas en el archivo y que contengan la secuencia **'AGAT'** 
+> - ejercicio usando `|` y `cut`:
+>
+	head -200 epiddrad\_5M_R1.fastq | cut -c -30 
+	
+>	---> que hace esta linea de codigo? 
+>	
+> - contar el número de secuencias únicas en el archivo y que contengan la secuencia **'AGAT'** .... cuántos programas se usaron en total?? 
 > 
 	grep 'AGAT' epiddrad\_5M_R1.fastq | sort | uniq | wc -l
 
