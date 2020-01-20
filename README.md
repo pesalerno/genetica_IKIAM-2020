@@ -1,5 +1,9 @@
 # genetica_IKIAM-2020
 >Contenido de sección de introducción a la bioinformática del curso de Genetica para las Carreras de Ing. en Ecosistemas y de Ing. en Biotecnologia de la Universidad Regional Amazonica IKIAM, dictada durante el semestre Oct 2019 - Feb 2020 por la Dra. Patricia E. Salerno.
+>
+>
+>**NOTA IMPORTANTE:** Este taller esta diseñado para ser totalmente autoguiado. Todo el código de este repositorio - y en general del taller de bioinfo dictado en el curso de Genética - está diseñado para funcionar en el sistema operativo que se basa en unix... es decir, **NO funciona para PC** (sistema operativo DOS) incluso utilizando un programa de interface (asi como lo es cmder). Así que, a pesar de ser bastante autoguidado, si no utiliza un sistema operativo unix/linux/ubuntu/mac el código no servirá en su totalidad. 
+
 
 **1. Introducción a repositorios git y su importancia.**
 ----
