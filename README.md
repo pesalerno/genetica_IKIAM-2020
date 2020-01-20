@@ -51,7 +51,7 @@ Primero, abre el shell y crea un directorio para bioinformática para el curso, 
  Ahora, nos damos cuenta que es mejor que organicemos nuestros datos crudos en una carpeta/directorio separado, asi que creamos un nuevo directorio llamado `datos-crudos` y usamos el ***wildcard*** `*` para mover ambos archivos usando un único comando. 
  
  	mkdir datos-crudos
- 	mv *.fq.gz datos-crudos
+ 	mv *.fastq.gz datos-crudos
  	cd datos-crudos
  	
  Ahora, comencemos a ver los archivos que nos mandaron de Illumina. Intentemos verlo de un par de formas con el archivo comprimido utilizando el programa `less`. 
@@ -68,9 +68,9 @@ Primero, abre el shell y crea un directorio para bioinformática para el curso, 
 	+
 	AAFFFJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
 
->Para recordar cómo funciona la química de la secuenciación Illumina vea [este video](). 
+>Para recordar cómo funciona la química de la secuenciación Illumina vea [este video](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
 
-Ahora, descomprimimos el archivo para moder manipularlo más con otros comandos, asi como `head` y `tail` que nos ayudan a ver comienzo y fin de un archivo de texto respectivamente, `cat` el cual imprime/visualiza archivos de texto en su totalidad, y `grep` que nos ayuda a contar líneas. 
+Ahora, descomprimimos el archivo para moder manipularlo más con otros comandos, asi como `head` y `tail` que nos ayudan a ver comienzo y fin de un archivo de texto respectivamente, `cat` el cual imprime/visualiza archivos de texto en su totalidad, y `grep` que nos ayuda a contar líneas y caracteres, y extraerlos a otro output. 
 
 	gunzip *.gz
 	ls #se terminaron de descomprimir?
