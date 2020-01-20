@@ -3,7 +3,18 @@
 
 **1. Introducción a repositorios git y su importancia.**
 ----
+Github es un software en línea y local que ayuda a colaborar en proyectos bioinformáticos y más en general de programación. 
 
+- open source & gratis
+- version control
+- repositorios colaborativos
+- repositorios publicos o privados
+
+>Instala [github para ubuntu aca](https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts/), para que en la siguiente clase intentemos hacer nuestro primer repositorio. 
+
+Por ahora, hagamos el ejercicio más básico de uso de github: bajarse el archivo llamado **README.md** del repositorio del curso llamado `genetica_IKIAM-2020`. Si quieren se bajan el repositorio completo, o van directo al archivo y se bajan unicamente ese. Lo lograron? 
+
+Intenten abrir el archivo **README.md** en formato *raw* en línea... que características generales tiene un archivo de formato [Markdown](http://pad.haroopress.com/user.html) (terminación `.md`)? 
 
 
 **2. Comenzando con datos de Illumina.** 
@@ -17,8 +28,10 @@ Primero, abre el shell y crea un directorio para bioinformática para el curso, 
 
  	mkdir BIOINFO-genetica
 	cd BIOINFO-genetica/
+	
 	mkdir 1ra-pratica
 	cd 1ra-pratica/
+ 	
  	curl -L -O https://www.dropbox.com/s/nuxs8c3po3mqksa/epiddrad_5M_R1_.fastq.gz?dl=1
  	curl -L -O https://www.dropbox.com/s/szf7lud0yhf7rqo/epiddrad_5M_R2_.fastq.gz?dl=1
  	
@@ -48,14 +61,16 @@ Primero, abre el shell y crea un directorio para bioinformática para el curso, 
  	
  	zless epiddrad_5M_R1.fastq.gz
  
- Ahora podemos ver lo que es el formato fastc de Illumina, quien nos manda el consenso del cluster de clones de secuencias y la calidad asociada a cada base secuenciada para cada una de nuestras millones de secuencias. 
+ Ahora podemos ver lo que es el formato fastq de Illumina, quien nos manda el consenso del cluster de clones de secuencias y la calidad asociada a cada base secuenciada para cada una de nuestras millones de secuencias. 
  
  	@K00179:78:HJ2KFBBXX:5:2121:8907:46786 1:N:0:TGACCA+AGATCT
 	GCATGCATGCATATGATGTCACTGTAATGCGCCGGCCCATCAGAATCTCATATGAATCTAATATGGGACCAGGATGGAGACATATGGGATCCAGGAAGGGAGAAAAGATTACCTAAAGGGGCTAGGAACACAATACTAATGTATGAGAAA
 	+
 	AAFFFJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
 
-Ahora, descomprimimos el archivo para moder manipularlo mas con otros comandos, asi como `head` y `tail` que nos ayudan a ver comienzo y fin de un archivo de texto, `cat` el cual imprime/visualiza archivos de texto en su totalidad, y `grep` que nos ayuda a contar lineas. 
+>Para recordar cómo funciona la química de la secuenciación Illumina vea [este video](). 
+
+Ahora, descomprimimos el archivo para moder manipularlo más con otros comandos, asi como `head` y `tail` que nos ayudan a ver comienzo y fin de un archivo de texto respectivamente, `cat` el cual imprime/visualiza archivos de texto en su totalidad, y `grep` que nos ayuda a contar líneas. 
 
 	gunzip *.gz
 	ls #se terminaron de descomprimir?
@@ -63,53 +78,76 @@ Ahora, descomprimimos el archivo para moder manipularlo mas con otros comandos, 
 	cat epiddrad_5M_R1.fastq.gz
  	#y ahora?? :-O
  	
- Este es el problema principal con cualquier dato de secuenciación masiva, que simplemente los datos crudos no son visualizables, porque son demasiado grandes. Entonces, tenemos que observar los datos de a poco y con ciertos programas usando la línea de comando. 
+ Este es el problema principal con cualquier dato de secuenciación masiva, que simplemente los datos crudos no son visualizables, porque son demasiado grandes. Entonces, tenemos que observar los datos de a poco y con ciertos programas usando la línea de comando. Primero, intentemos el comando más simple:
  
- 	# print the first 10 lines of a file
-	head epiddrad_5M_R1_.fastq
+ 	head epiddrad_5M_R1.fastq
+ 	tail epiddrad_5M_R1.fastq
+ 
+ Para imprimir las primeras 20 líneas de un archivo:
+ 
+	head epiddrad_5M_R1.fastq -20 
 
-	# print the first 20 lines of a file
-	head epiddrad_5M_R1_.fastq -20 # '-20' is an argument for the 'head' program
+Donde '-20' es un argumento para el programa `head`. Para imprimir entre las líneas 190 y 200, se puede escribir un programa sencillo utilizando `head` y `tail` junto con `|` (o mejor conocido como *'pipe'*). 
 
-	# print lines 190-200 of a file
-	head -200 epiddrad_5M_R1_.fastq | tail # 'pipes' the first 200 lines to a program called tail, which prints the last 10 lines
+	head -200 epiddrad_5M_R1.fastq | tail 
+	
+	# 'pipes' the first 200 lines to a program called tail, which prints the last 10 lines
 
-	# view the file interactively
-	less epiddrad_5M_R1_.fastq # can scroll through file with cursor, page with spacebar; quit with 'q'
-	# NOTE: here we can use less because the file is not in gzipped (remember that required the 'zless' command)
 
-	# open up manual for less program
+También podemos visualizar el archivo por partes utilizando `less`: 
+
+	less epiddrad_5M_R1.fastq 
+	
+	# can scroll through file with cursor, page with spacebar; quit with 'q'
+	
+
+>Si desean ver el manual para el programa, pueden escribir: 
+>
 	man less # press q to quit
 
-	# print only the first 10 lines and only the first 30 characters of each line
-	head -200 epiddrad_5M_R1_.fastq | cut -c -30 
+
+>Otro ejercicio usando `|` y otro programa, `cut`:
+>
+	head -200 epiddrad_5M_R1.fastq | cut -c -30 
 
  
- A parte de siplemente visualizar nuestro archivo con ciertos comandos, podemos crear programas/pipelines sencillos de formato `standard_in>standard_out` para contar numeros de secuencias en total o por determinado **barcode** de interés dentro de nuestro *pool* de muestras secuenciadas. 
+ Podemos usar el programa `wc`, o *word count* para contar el numero de líneas, por ejemplo, en un archivo. 
  
- 	# count the number of lines in the file
-	wc -l epiddrad_5M_R1_.fastq # (this takes a moment because the file is large)
-
-	# print lines with AAAAA in them
-	grep 'AAAAA' epiddrad_5M_R1_.fastq # ctrl+c to exit
-
-	# count lines with AAAAA in them
-	grep -c 'AAAAA' epiddrad_5M_R1_.fastq
-
-	# save lines with AAAAA in them as a separate file
-	grep 'AAAAA' epiddrad_5M_R1_.fastq > AAAAA # no file extensions necessary!!
-
-	# add lines with TTTTT to the AAAAA file: '>' writes or overwrites file; '>>' writes or appends to file
-	grep 'TTTTT' epiddrad_5M_R1_.fastq >> AAAAA 
-
-	# print lines with aaaaa in them
-	grep 'aaaaa' epiddrad_5M_R1_.fastq
-	# why doesn't this produce any output?
-
-	# count number of uniq sequences in file with pattern 'AGAT'
-	grep 'AGAT' epiddrad_5M_R1_.fastq | sort | uniq | wc -l
-
-	# print only the second field of the sequence information line
-	head epiddrad_5M_R1_.fastq | grep '@' | awk -F':' '{ print $2 }' 
-	# awk is a very useful program for parsing files; here ':' is the delimiter, $2 is the column location
+ 	wc -l epiddrad_5M_R1.fastq 
+ 		
+ Pero, esto no parece muy útil dado que no todas las líneas son secuencias... aunque podemos usar una simple division.... En todo caso, queremos contar el número de secuencias por un determinado barcode de secuencia conocida, y guardarlas luego en otro archivo, por lo que usamos: 
+ 
+ 	grep -c 'AAAAA' epiddrad_5M_R1.fastq
+ 	grep 'AAAAA' epiddrad_5M_R1.fastq > barcode.txt
  	
+
+También puede que queramos agregar otro barcode a ese mismo archivo, por lo que usamos `>>` para comenzar a escribir al final del archivo preexistente - en vez de reescribir!
+
+	grep 'TTTTT' epiddrad_5M_R1.fastq >> AAAAA 
+
+
+
+> Otros ejercicios: 
+> 
+> - contar el número de secuencias únicas en el archivo y que contengan la secuencia **'AGAT'** 
+> 
+	grep 'AGAT' epiddrad\_5M_R1.fastq | sort | uniq | wc -l
+
+
+ 	
+ **3. Visualizando calidad de corrida de Illumina.** 
+----
+Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es Illumina. 
+
+	mkdir programas
+	cd programas
+
+Luego, para instalar el programa utilicemos la línea de comando y el programa `curl` de la siguiente manera:
+	
+	curl -L -O https://www.bioinformatics.babraham.ac.uk/projects/	fastqc/fastqc_v0.11.5.zip
+	
+Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe tener un nombre parecido a `fastqc_v0.11.5.zip`. Una vez descomprimido, está listo para ser usado. Para correr el programa:
+
+	relative/path/to/programs/FastQC/fastqc *.fastq
+
+	open epiddrad_5M_R1_fastqc.html
