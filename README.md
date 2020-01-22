@@ -4,6 +4,7 @@
 >
 >**NOTA IMPORTANTE:** Este taller esta diseñado para ser totalmente autoguiado. Todo el código de este repositorio - y en general del taller de bioinfo dictado en el curso de Genética - está diseñado para funcionar en el sistema operativo que se basa en unix... es decir, **NO funciona para PC** (sistema operativo DOS) incluso utilizando un programa de interface (asi como lo es cmder). Así que, a pesar de ser bastante autoguidado, si no utiliza un sistema operativo unix/linux/ubuntu/mac el código no servirá en su totalidad. 
 
+# lunes 20 ene | introducción a bioinfo parte 1
 
 **1. Introducción a repositorios git y su importancia.**
 ----
@@ -139,7 +140,39 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
 	grep 'AGAT' epiddrad\_5M_R1.fastq | sort | uniq | wc -l
 
 
+# lunes 27 ene | introducción a bioinfo parte II
  	
+****
+ 
+ 
+ 1. Entendiendo mejor los directorios y los *paths* en línea de comando
+----
+ 
+ Hasta ahora, hemos creado nuevos directorios (carpetas) utilizando `mkdir`, hemos entrado a ese directorio con el comando `cd`. Pero, es importante entender bien cómo escribir buenos `paths`, tanto relativos como absolutos. Hablemos de paths. En mi compu local, donde ahorita me encuentro trabajando en mi repositorio de github para este curso (es decir, en poner al día este documento que lees) escribo el comando `pwd`, el cual me da el **path absoluto**: 
+ 
+ 	/Users/patriciasalerno/Documents/IKIAM/semestre_oct-2019/GENETICA/BIOINFO/GIT/genetica_IKIAM-2020
+ 	
+ Esto quiere decir que yo guardé (cloné) el repositorio de github llamado `genetica_IKIAM-2020` dentro de una carpeta que yo llamé `GIT` dentro de otra carpeta que llame `BIOINFO` adentro de **incluso** otra carpeta llamada `GENETICA` dentro de otra carpeta llamada.... etc., etc. O, en otras palabras, tengo un desastre de directorios, y mi computador personal se ve así: 
+ 
+ ![fotito]()
+ 
+ 
+ 
+ 
+ 
+ 
+Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de dos opciones. Primero, podemos navegarnos a través del **path relativo**, de la siguiente manera: 
+
+	cd ../../../../../../../Downloads
+ 
+ Pero.... está tan lejos el directorio `Downloads` de donde estamos (es decir, el **path relativo** es muy largo) que tal vez es más fácil usar el path absoluto en este caso: 
+ 
+ 	cd ~/Downloads
+ 
+ >Se entendió la diferencia entre un *path* relativo y uno absoluto? Intenten navegar un poco por sus compus.... 
+ 
+ 
+ 
  **3. Visualizando calidad de corrida de Illumina.** 
 ----
 Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es Illumina. 
