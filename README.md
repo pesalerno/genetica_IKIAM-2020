@@ -154,9 +154,7 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
  	
  Esto quiere decir que yo guardé (cloné) el repositorio de github llamado `genetica_IKIAM-2020` dentro de una carpeta que yo llamé `GIT` dentro de otra carpeta que llame `BIOINFO` adentro de **incluso** otra carpeta llamada `GENETICA` dentro de otra carpeta llamada.... etc., etc. O, en otras palabras, tengo un desastre de directorios, y mi computador personal se ve así: 
  
- ![fotito]()
- 
- 
+ ![fotito](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/mac-paths-pati.png)
  
  
  
