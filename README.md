@@ -143,7 +143,7 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
 # lunes 27 ene | introducción a bioinfo parte II
  	
 ****
- En general, comenzar a usar la línea de comando no es fácil. Pero, una vez que uno se acostumbra, luego resulta más fácil manejarse en el computador en línea de comando que usando el `GUI` del **buscador** o **finder**. Mientras se acostumbran a la línea de comando, deben apoyarse de cosas en línea para recordarse de las cosas más usadas, las cuales luego se les harán totalmente natural. Por lo pronto, aca hay una [guia muy util](https://www.ntu.edu.sg/home/ehchua/programming/howto/Unix_SurvivalGuide.html) para comenzar, y aca también le pongo una lista/compilación de comandos útiles y comunes: 
+ En general, comenzar a usar la línea de comando no es fácil. Pero, una vez que uno se acostumbra, luego resulta más fácil manejarse en el computador en línea de comando que usando el `GUI` del **buscador** o **finder**. Mientras se acostumbran a la línea de comando, deben apoyarse de recursos en línea para acostumbrarse a los comandos más usados, los cuales luego se les harán totalmente naturales. Por lo pronto, acá hay una [guia muy util](https://www.ntu.edu.sg/home/ehchua/programming/howto/Unix_SurvivalGuide.html) para comenzar, y abajo también les pongo una lista/compilación de comandos útiles y comunes: 
  
  Command | Translation | Examples
 --------|-------------|---------
@@ -165,8 +165,8 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
 
  
 
-1. Entendiendo mejor los directorios y los *paths* en línea de comando
-----
+## 1. Entendiendo mejor los directorios y los *paths* en línea de comando
+
  
  Hasta ahora, hemos creado nuevos directorios (carpetas) utilizando `mkdir`, hemos entrado a ese directorio con el comando `cd`. Pero, es importante entender bien cómo escribir buenos `paths`, tanto relativos como absolutos. Hablemos de paths. En mi compu local, donde ahorita me encuentro trabajando en mi repositorio de github para este curso (es decir, en poner al día este documento que lees) escribo el comando `pwd`, el cual me da el **path absoluto**: 
  
