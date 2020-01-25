@@ -143,9 +143,29 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
 # lunes 27 ene | introducción a bioinfo parte II
  	
 ****
+ En general, comenzar a usar la línea de comando no es fácil. Pero, una vez que uno se acostumbra, luego resulta más fácil manejarse en el computador en línea de comando que usando el `GUI` del **buscador** o **finder**. Mientras se acostumbran a la línea de comando, deben apoyarse de cosas en línea para recordarse de las cosas más usadas, las cuales luego se les harán totalmente natural. Por lo pronto, aca hay una [guia muy util](https://www.ntu.edu.sg/home/ehchua/programming/howto/Unix_SurvivalGuide.html) para comenzar, y aca también le pongo una lista/compilación de comandos útiles y comunes: 
  
+ Command | Translation | Examples
+--------|-------------|---------
+`cd` | **c**hange **d**irectory | `cd /absolute/path/of/the/directory/` <br> Go to the home directory by typing simply  `cd` or `cd ~` <br> Go up (back) a directory by typing `cd ..`
+`pwd` | **p**rint **w**orking **d**irectory | `pwd`
+`mkdir` | **m**ake **dir**ectory | `mkdir newDirectory` creates newDirectory in your current directory <br> Make a directory one level up with `mkdir ../newDirectory`
+`cp` | **c**o<b>p</b>y | `cp file.txt newfile.txt` (and file.txt will still exist!)
+`mv` | **m**o<b>v</b>e | `mv file.txt newfile.txt` (but file.txt will *no longer* exist!)
+`rm` | **r**e<b>m</b>ove | `rm file.txt` removes file.txt <br> `rm -r directoryname/` removes the directory and all files within
+`ls` | **l**i<b>s</b>t | `ls *.txt` lists all .txt files in current directory <br> `ls -a` lists all files including hidden ones in the current directory <br> `ls -l` lists all files in current directory including file sizes and timestamps <br> `ls -lh` does the same but changes file size format to be **h**uman-readable <br> `ls ../` lists files in the directory above the current one
+`man` | **man**ual | `man ls` opens the manual for command `ls` (use `q` to escape page)
+`grep` | **g**lobal **r**egular <br> **e**xpression **p**arser |  `grep ">" seqs.fasta` pulls out all sequence names in a fasta file <br> `grep -c ">" seqs.fasta` counts the number of those sequences <br> 
+`cat` | con<b>cat</b>enate | `cat seqs.fasta` prints the contents of seqs.fasta to the screen (ie stdout)
+`head` | **head** | `head seqs.fasta` prints the first 10 lines of the file <br> `head -n 3 seqs.fasta` prints first 3 lines
+`tail` | **tail** | `tail seqs.fasta` prints the last 10 lines of the file <br> `tail -n 3 seqs.fasta` prints last 3 lines
+`wc` | **w**ord **c**ount | `wc filename.txt` shows the number of new lines, number of words, and number of characters <br> `wc -l filename.txt` shows only the number of new lines <br> `wc -c filename.txt` shows only the number of characters
+`sort` | **sort** | `sort filename.txt` sorts file and prints output
+`uniq` | **uniq**ue | `uniq -u filename.txt` shows only unique elements of a list <br> (must use sort command first to cluster repeats)
+
  
- 1. Entendiendo mejor los directorios y los *paths* en línea de comando
+
+1. Entendiendo mejor los directorios y los *paths* en línea de comando
 ----
  
  Hasta ahora, hemos creado nuevos directorios (carpetas) utilizando `mkdir`, hemos entrado a ese directorio con el comando `cd`. Pero, es importante entender bien cómo escribir buenos `paths`, tanto relativos como absolutos. Hablemos de paths. En mi compu local, donde ahorita me encuentro trabajando en mi repositorio de github para este curso (es decir, en poner al día este documento que lees) escribo el comando `pwd`, el cual me da el **path absoluto**: 
