@@ -208,7 +208,7 @@ Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe 
 
 
 
- ![fotito]()
+ ![fotito](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/directorio-path.png)
 
 
 Una vez decifrado el path relativo desde donde tenemos guardada el archivo de las secuencias, corremos el programa fastqc para obtener los datos resumidos de calidad de la corrida de Illumina:
