@@ -198,10 +198,12 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 >**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**). 
 >
-> Antes de continuar, veamos cómo es que funciona una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) , y en específico cómo se construyó esta librería utilizando el protocolo de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf). 
+> Antes de continuar, veamos cómo es que funciona una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) , y en específico cómo se construyó esta librería utilizando el protocolo de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf), para así entender por qué nuestros datos tienen la siguiente estructura:
+>  
+![](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/images/ddRAD-read.png?raw=true)
 
 
-Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es Illumina. 
+Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](). 
 
 	mkdir 2da-practica
 	cd 2da-practica
@@ -261,12 +263,5 @@ Una vez decifrado el path relativo desde donde tenemos guardada el archivo de la
 
 	open epiddrad_5M_R1_fastqc.html
 	
-Sequencing quality scores, "Q", run from 20 to 40. In the fastq file, these are seen as ASCII characters. 
-The values are log-scaled: 20 = 1/100 errors; 30 = 1/1000 errors. Anything below 20 is garbage and anything between 20 and 30 should be reviewed.
-There appear to be errors in the kmer content, but really these are just showing where the barcodes and restriction enzyme sites are. 
-
-> Now, let's take a short pause to look into how ddRAD libraries are constructed in this [mini-lecture](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) to understand why our Illumina reads look like this:
-
-![](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/images/ddRAD-read.png?raw=true)
 
 ---
