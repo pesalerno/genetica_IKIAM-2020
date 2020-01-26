@@ -242,7 +242,7 @@ Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le
 >		##vean todo lo que dice en cuanto a permisos en la izquierda
 >		chmod +rwx process_radtags
 >		ls -ltr
->		##vean nuevamente la info de los permisos.... [cómo cambió??]()
+>		##vean nuevamente la info de los permisos.... [cómo cambió??](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/chmod.png)
 
 
 
