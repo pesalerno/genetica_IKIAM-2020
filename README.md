@@ -207,15 +207,15 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 >**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**) y entendiendo cómo fueron generadas las librerías de nuestros datos. 
 >
->De muchas formas, las librerías de ddRAD se asemejan a otras técnicas moleculares como lo son los [RFLPs](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/RFLPs.png) y los [AFLPs](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/AFLPs.png). En las librerías de ddRAD, digerimos con dos [enzimas de restricción](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/restrictiondigest.png), las cuales dejan un *sticky end** de secuencia conocida y al cual *ligo* mis **adaptadores** con mis **barcodes únicos**. 
+>De muchas formas, las librerías de ddRAD se asemejan a otras técnicas moleculares como lo son los [RFLPs](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/RFLPs.png) y los [AFLPs](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/AFLPs.png). En las librerías de ddRAD, digerimos con dos [enzimas de restricción](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/restrictiondigest.png), las cuales dejan un **sticky end** de secuencia conocida y al cual *ligo* mis **adaptadores** con mis **barcodes únicos**. 
 >
 >
-> En una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf), y en específico de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf) (protocolo con el cual se construyó la librería de ***Epipedobates***), se utilizan dos esnzimas de restricción **SphI + MluCl**, por lo que tenemos el siguiente formato de [nuestras librerías](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/RAD-vs-ddRAD.png) y de nuestros datos:
+> En una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf), y en específico de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf) (protocolo con el cual se construyó la librería de [***Epipedobates***](https://en.wikipedia.org/wiki/Epipedobates)), se utilizan dos enzimas de restricción, en este caso **SphI + MluCl**, por lo que tenemos el siguiente formato de [nuestras librerías](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/RAD-vs-ddRAD.png) y de nuestros datos:
 > 
 >
 ![](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/images/ddRAD-read.png?raw=true)
 >
->el protocolo de ddRAD desde su publicación en el 2012 ha cito citado miles de veces debido a su versatilidad, ya que permite ajustarlo al tamaño del genoma del grupo de interés así como al porcentaje del genoma que quiere ser muestreado. 
+>el protocolo de ddRAD desde su publicación en el 2012 ha sido citado miles de veces debido a su versatilidad, ya que permite ajustarlo al tamaño del genoma del grupo de interés así como al porcentaje del genoma que quiere ser muestreado. 
 >
 
 
