@@ -193,6 +193,14 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
  
  **2. Visualizando calidad de corrida de Illumina.** 
 ----
+
+****
+
+>**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**). 
+>
+> Antes de continuar, veamos cómo es que funciona una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) , y en específico cómo se construyó esta librería utilizando el protocolo de [**ddRAD**[(). 
+
+
 Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es Illumina. 
 
 	mkdir 2da-practica
@@ -231,23 +239,18 @@ Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe 
 
 Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le da el `directorio absoluto` del archivo que quiere ejecutar. 
 
->**NOTA:** Archivos ejecutables y no ejecutables pueden ser bastante complejos. en este caso, si la ventana del terminal, luefo de intentar ejecutar un programa, te dice: 
+>**NOTA:** Hablemos un poco de archivos ejecutables y no ejecutables.Si luego de intentar ejecutar cualquier archivo que deberia se ejecutable (es decir, como cualquier `biniario` de un programa) si la ventana del terminal te dice: 
 >
 >		-bash: ./process_radtags: Permission denied
 >
->eso quiere decir que tu computador no tiene el permiso para ejecutar ese archivo. Por tanto usamos `chmod` para modificar los permisos de ese archivo: 
+>eso quiere decir que tu computador no tiene el permiso para ejecutar ese archivo. Por tanto debemos usar `chmod` para modificar los permisos de ese archivo: 
 >
->		ls
 >		ls -ltr 
 >		##vean todo lo que dice en cuanto a permisos en la izquierda
 >		chmod +rwx process_radtags
 >		ls -ltr
->		##vean nuevamente la info de los permisos.... [cómo cambió??](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/chmod.png)
-
-
-
-
-
+>
+>vean nuevamente la info de los permisos.... [cómo cambió??](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/chmod.png).Ahora el archivo debe ser ejecutable sin ningn problema. 
 
 
 
