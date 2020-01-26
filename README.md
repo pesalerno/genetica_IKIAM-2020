@@ -198,7 +198,7 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 >**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**). 
 >
-> Antes de continuar, veamos cómo es que funciona una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) , y en específico cómo se construyó esta librería utilizando el protocolo de [**ddRAD**[(). 
+> Antes de continuar, veamos cómo es que funciona una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) , y en específico cómo se construyó esta librería utilizando el protocolo de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf). 
 
 
 Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es Illumina. 
