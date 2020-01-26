@@ -148,7 +148,7 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
 	cd 2da-practica	
  	
 ****
- En general, comenzar a usar la línea de comando no es fácil. Pero, una vez que uno se acostumbra, luego resulta más fácil manejarse en el computador en línea de comando que usando el `GUI` del **buscador** o **finder**. Mientras se acostumbran a la línea de comando, deben apoyarse de recursos en línea para acostumbrarse a los comandos más usados, los cuales luego se les harán totalmente naturales. Por lo pronto, acá hay una [guia muy util](https://www.ntu.edu.sg/home/ehchua/programming/howto/Unix_SurvivalGuide.html) para comenzar, y abajo también les pongo una lista/compilación de comandos útiles y comunes: 
+ >En general, comenzar a usar la línea de comando no es fácil. Pero, una vez que uno se acostumbra, luego resulta más fácil manejarse en el computador en línea de comando que usando el `GUI` del **buscador** o **finder**. Mientras se acostumbran a la línea de comando, deben apoyarse de recursos en línea para acostumbrarse a los comandos más usados, los cuales luego se les harán totalmente naturales. Por lo pronto, acá hay una [guia muy util](https://www.ntu.edu.sg/home/ehchua/programming/howto/Unix_SurvivalGuide.html) para comenzar, y abajo también les pongo una lista/compilación de comandos útiles y comunes: 
  
  Command | Translation | Examples
 --------|-------------|---------
@@ -270,6 +270,11 @@ Una vez decifrado el path relativo desde donde tenemos guardada el archivo de la
 	
 
 ---
+
+## 4. Comenzando a desenredar los millones de datos utilizando el `pipeline` de **stacks** 
+
+
+Stacks es un programa que .... etc. 
 
 
 >**NOTA:** Hablemos un poco de archivos ejecutables y no ejecutables.Si luego de intentar ejecutar cualquier archivo que deberia se ejecutable (es decir, como cualquier `biniario` de un programa) si la ventana del terminal te dice: 
