@@ -142,6 +142,11 @@ También puede que queramos agregar otro barcode a ese mismo archivo, por lo que
 
 # lunes 27 ene | introducción a bioinfo parte II
  	
+ Antes de empezar, comience por crear un directorio donde guardará todo lo que hagamos durante la práctica de hoy:
+ 	
+ 	mkdir 2da-practica
+	cd 2da-practica	
+ 	
 ****
  En general, comenzar a usar la línea de comando no es fácil. Pero, una vez que uno se acostumbra, luego resulta más fácil manejarse en el computador en línea de comando que usando el `GUI` del **buscador** o **finder**. Mientras se acostumbran a la línea de comando, deben apoyarse de recursos en línea para acostumbrarse a los comandos más usados, los cuales luego se les harán totalmente naturales. Por lo pronto, acá hay una [guia muy util](https://www.ntu.edu.sg/home/ehchua/programming/howto/Unix_SurvivalGuide.html) para comenzar, y abajo también les pongo una lista/compilación de comandos útiles y comunes: 
  
@@ -195,22 +200,31 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
  
  
  
- **2. Visualizando calidad de corrida de Illumina.** 
+ **2. Entendiendo las librerías de ddRAD y los datos de Illumina.** 
 ----
 
 ****
 
 >**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**) y entendiendo cómo fueron generadas las librerías de nuestros datos. 
 >
-> Antes de continuar, veamos cómo es que funciona una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) , y en específico cómo se construyó esta librería utilizando el protocolo de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf), para así entender por qué nuestros datos tienen la siguiente estructura:
->  
+>De muchas formas, las librerías de ddRAD se asemejan a otras técnicas moleculares como lo son los [RFLPs]() y los [AFLPs](). En las librerías de ddRAD, digerimos con dos [enzimas de restricción](), las cuales dejan un *sticky end** de secuencia conocida y al cual *ligo* mis [adaptadores]() con mis **barcodes únicos**. 
+>
+>
+> En una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf), y en específico de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf) (protocolo con el cual se construyó la librería de ***Epipedobates***), se utilizan dos esnzimas de restricción **SphI + MluCl**, por lo que tenemos el siguiente formato de [nuestras librerías](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/RAD-vs-ddRAD.png) y de nuestros datos:
+> 
+>
 ![](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/images/ddRAD-read.png?raw=true)
 >
->Nuestras librerías fueron generadas utilizando el protocolo [ddRAD](), el cual desde su publicación en el 2012 ha cito citado miles de veces debido a la versatilidad del protocolo el cual permite ajustarlo al tamaño del genoma del grupo de interés así como al porcentaje del genoma que quiere ser muestreado. 
+>el protocolo de ddRAD desde su publicación en el 2012 ha cito citado miles de veces debido a su versatilidad, ya que permite ajustarlo al tamaño del genoma del grupo de interés así como al porcentaje del genoma que quiere ser muestreado. 
+>
+
+
+
+ **2. Entendiendo las librerías de ddRAD y los datos de Illumina.** 
+----
 
 Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](). 
 
-	mkdir 2da-practica
 	cd 2da-practica
 	mkdir programas
 	cd programas
@@ -237,7 +251,7 @@ Luego, para instalar el programa utilicemos la línea de comando y el programa `
 >
 >lo cual le pide el password, el cual es `estudiante` - y recuerde, no se vera ningun texto cuando escribe **porque el password es secreto!!**
 	
-Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe tener un nombre parecido a `fastqc_v0.11.5.zip`. Una vez descomprimido, está listo para ser usado. Para correr el programa, primero debe decifrar el directorio relativo del programa para asi poder correr el comando desde el directorio deonde están los datos. Una recomendación de una manera de hacerlo facil, es abrir una ventana del buscador como ésta: 
+Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe tener un nombre parecido a `fastqc_v0.11.5.zip`. Una vez descomprimido, está listo para ser usado. Para correr el programa, primero debe decifrar el directorio relativo del programa para asi poder correr el comando desde el directorio donde están los datos. Una recomendación de una manera de hacerlo fácil es abrir una ventana del buscador como ésta: 
 
 
 
@@ -245,6 +259,18 @@ Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe 
 
 
 Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le da el `directorio absoluto` del archivo que quiere ejecutar. 
+
+
+Una vez decifrado el path relativo desde donde tenemos guardada el archivo de las secuencias, corremos el programa fastqc para obtener los datos resumidos de calidad de la corrida de Illumina:
+
+
+	/Users/patriciasalerno/Documents/IKIAM/semestre_oct-2019/GENETICA/BIOINFO/GIT/genetica_IKIAM-2020/FastQC/fastqc epiddrad_5M_R1.fastq.gz
+
+	open epiddrad_5M_R1_fastqc.html
+	
+
+---
+
 
 >**NOTA:** Hablemos un poco de archivos ejecutables y no ejecutables.Si luego de intentar ejecutar cualquier archivo que deberia se ejecutable (es decir, como cualquier `biniario` de un programa) si la ventana del terminal te dice: 
 >
@@ -259,14 +285,3 @@ Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le
 >
 >vean nuevamente la info de los permisos.... [cómo cambió??](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/chmod.png).Ahora el archivo debe ser ejecutable sin ningn problema. 
 
-
-
-Una vez decifrado el path relativo desde donde tenemos guardada el archivo de las secuencias, corremos el programa fastqc para obtener los datos resumidos de calidad de la corrida de Illumina:
-
-
-	/Users/patriciasalerno/Documents/IKIAM/semestre_oct-2019/GENETICA/BIOINFO/GIT/genetica_IKIAM-2020/FastQC/fastqc epiddrad_5M_R1.fastq.gz
-
-	open epiddrad_5M_R1_fastqc.html
-	
-
----
