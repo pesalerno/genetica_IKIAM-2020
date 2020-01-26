@@ -229,6 +229,28 @@ Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe 
  ![fotito](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/directorio-path.png)
 
 
+Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le da el `directorio absoluto` del archivo que quiere ejecutar. 
+
+>**NOTA:** Archivos ejecutables y no ejecutables pueden ser bastante complejos. en este caso, si la ventana del terminal, luefo de intentar ejecutar un programa, te dice: 
+>
+>		-bash: ./process_radtags: Permission denied
+>
+>eso quiere decir que tu computador no tiene el permiso para ejecutar ese archivo. Por tanto usamos `chmod` para modificar los permisos de ese archivo: 
+>
+>		ls
+>		ls -ltr 
+>		##vean todo lo que dice en cuanto a permisos en la izquierda
+>		chmod +rwx process_radtags
+>		ls -ltr
+>		##vean nuevamente la info de los permisos.... [cómo cambió??]()
+
+
+
+
+
+
+
+
 Una vez decifrado el path relativo desde donde tenemos guardada el archivo de las secuencias, corremos el programa fastqc para obtener los datos resumidos de calidad de la corrida de Illumina:
 
 
