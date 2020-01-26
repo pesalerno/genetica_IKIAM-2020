@@ -203,6 +203,24 @@ Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.ba
 Luego, para instalar el programa utilicemos la línea de comando y el programa `curl` de la siguiente manera:
 	
 	curl -L -O https://www.bioinformatics.babraham.ac.uk/projects/	fastqc/fastqc_v0.11.5.zip
+
+*****
+
+>**NOTA:** Puede que su computador no tenga la version de java necesaria para correr la visualización de la calidad de la corrida, por lo que tendría que bajarse la instalación en [esta pagina web](https://www.oracle.com/technetwork/java/javase/downloads/jdk13-downloads-5672538.html) y escogiendo (haciendo click) en el archivo que se llama `jda-13.0.2_linux-x64_bin.tax.gz`, y luego escribiendo en el directorio donde se lo bajo: 
+>
+>		tar xfvz jda-13.0.2_linux-x64_bin.tax.gz
+>
+>lo cual descomprimirá el archivo 
+>
+>		./configure
+>		./make
+>		./make install
+>		
+>y si ese ultimo comando no funciona, entonces utilice el siguiente comando: 
+>
+>		./sudo make install 
+>
+>lo cual le pide el password, el cual es `estudiante` - y recuerde, no se vera ningun texto cuando escribe **porque el password es secreto!!**
 	
 Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe tener un nombre parecido a `fastqc_v0.11.5.zip`. Una vez descomprimido, está listo para ser usado. Para correr el programa, primero debe decifrar el directorio relativo del programa para asi poder correr el comando desde el directorio deonde están los datos. Una recomendación de una manera de hacerlo facil, es abrir una ventana del buscador como ésta: 
 
