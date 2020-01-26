@@ -207,7 +207,7 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 >**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**) y entendiendo cómo fueron generadas las librerías de nuestros datos. 
 >
->De muchas formas, las librerías de ddRAD se asemejan a otras técnicas moleculares como lo son los [RFLPs]() y los [AFLPs](). En las librerías de ddRAD, digerimos con dos [enzimas de restricción](), las cuales dejan un *sticky end** de secuencia conocida y al cual *ligo* mis [adaptadores]() con mis **barcodes únicos**. 
+>De muchas formas, las librerías de ddRAD se asemejan a otras técnicas moleculares como lo son los [RFLPs](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/RFLPs.png) y los [AFLPs](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/AFLPs.png). En las librerías de ddRAD, digerimos con dos [enzimas de restricción](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/restrictiondigest.png), las cuales dejan un *sticky end** de secuencia conocida y al cual *ligo* mis **adaptadores** con mis **barcodes únicos**. 
 >
 >
 > En una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf), y en específico de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf) (protocolo con el cual se construyó la librería de ***Epipedobates***), se utilizan dos esnzimas de restricción **SphI + MluCl**, por lo que tenemos el siguiente formato de [nuestras librerías](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/RAD-vs-ddRAD.png) y de nuestros datos:
@@ -220,10 +220,10 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 
 
- **2. Entendiendo las librerías de ddRAD y los datos de Illumina.** 
+ **3. Analizando la calidad de los datos y de la corrida de Illumina utilizando fastqc.** 
 ----
 
-Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](). 
+Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
 
 	cd 2da-practica
 	mkdir programas
