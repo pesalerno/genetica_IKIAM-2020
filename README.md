@@ -183,11 +183,15 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 	cd ../../../../../../../Downloads
  
- Pero.... está tan lejos el directorio `Downloads` de donde estamos (es decir, el **path relativo** es muy largo) que tal vez es más fácil usar el path absoluto en este caso: 
+ Pero.... está tan lejos el directorio `Downloads` de donde estamos (es decir, el **path relativo** es muy largo) que tal vez es más fácil usar el **path absoluto**, que en este caso es: 
  
  	cd ~/Downloads
  
- >Se entendió la diferencia entre un *path* relativo y uno absoluto? Intenten navegar un poco por sus compus.... 
+ >Se entendió la diferencia entre un *path* **relativo** y uno **absoluto**? Intenten navegar un poco por sus compus.... si se pierden, recuerden que siempre pueden acceder a su carpeta de `Documentos` desde el directorio `~`, por lo que siempre que se pierdan pueden escribir: 
+> 
+>	 	cd ~/Documents 
+ 
+ 
  
  
  
@@ -196,12 +200,13 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 ****
 
->**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**). 
+>**NOTA:** recordando cómo funciona una libreria de **G**ENOTYPING **B**Y **S**EQUENCING (**GBS**) y entendiendo cómo fueron generadas las librerías de nuestros datos. 
 >
 > Antes de continuar, veamos cómo es que funciona una librería de [GBS en general](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/files/GBS-libraries.pdf) , y en específico cómo se construyó esta librería utilizando el protocolo de [**ddRAD**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/ddRAD-protocol.pdf), para así entender por qué nuestros datos tienen la siguiente estructura:
 >  
 ![](https://github.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/blob/master/images/ddRAD-read.png?raw=true)
-
+>
+>Nuestras librerías fueron generadas utilizando el protocolo [ddRAD](), el cual desde su publicación en el 2012 ha cito citado miles de veces debido a la versatilidad del protocolo el cual permite ajustarlo al tamaño del genoma del grupo de interés así como al porcentaje del genoma que quiere ser muestreado. 
 
 Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](). 
 
