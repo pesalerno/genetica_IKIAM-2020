@@ -272,7 +272,12 @@ Ahora finalmente podemos correr la línea de comando para hacer el 'demultiplexi
 
 	./process_radtags -p ./datos-crudos -b ./barcodes.txt -o ./demultiplex -c -q -r -D --inline_null --renz_1 sphI --renz_2 mluCI
 
+>Exactamente qué está sucediendo en este paso?? 
+
+>![](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/stacks-1.png)
+
 **************
+
  **5. Analizando la calidad de los datos y de la corrida de Illumina utilizando fastqc.** 
 ----
 
