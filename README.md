@@ -226,11 +226,14 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 ## 3. Comenzando a desenredar los millones de datos utilizando el `pipeline` de **stacks** 
 
 
-Stacks es un 'cuasi-programa' el cual utiliza/une programas escritos en varios lenguajes como `C++`, `Perl`, `python`, y ayuda al usuario a generar un 'pipeline' de análisis que te lleva desde secuencias crudas hasta matrices de SNPs/secuencias concatenadas, y está especialmente diseñado para genotipificar loci generados de librerías de **GBS** - y más generalmente de librerías genómicas de representación reducida generadas con enzimas de digestión. 
+[Stacks](http://catchenlab.life.illinois.edu/stacks/manual/) es un 'cuasi-programa' el cual utiliza/une programas escritos en varios lenguajes como `C++`, `Perl`, `python`, y ayuda al usuario a generar un 'pipeline' de análisis que te lleva desde secuencias crudas hasta matrices de SNPs/secuencias concatenadas, y está especialmente diseñado para genotipificar loci generados de librerías de **GBS** - y más generalmente de librerías genómicas de representación reducida generadas con enzimas de digestión. 
+
 
 Hoy, vamos a comenzar con el primer paso de cualquier librería de GBS, que es separar las secuencias en los individuos, lo cual hacemos a través de la secuencia única de barcode que fue asignada durante la preparación de las librerías. Recuerden que la razón principal por la cual RADseq/ddRAD son protocolos tan famosos es porque podemos hacer 'pooling' de decentas/cientos de individuos en [un mismo *'lane'*](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/pooling.png) de Illumina, ahorrándonos así miles de dólares y secuenciar una menor profundidad/porcentaje del genoma (ergo: secuenciación genómica de representación reducida).
 
->**MAS ACERCA DE NUESTRAS LIBRERIAS:** Luego de cortar nuestro genoma con las [enzimas de digestión](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/restrictiondigest.png) 'ligamos' (pegamos) los adaptadores a nuestros retazos del genoma, los cuales contienen los barcodes únicos para cada individuo - y esto lo debo llevar anotado en mi cuaderno de laboratorio!!! Pero de todas formas, yo ademas de tenerlo en mi cuaderno de lab lo tengo en el [siguiente archivo de texto](https://raw.githubusercontent.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/master/data/epi_barcodes.txt). Luego de que mis adaptadores están ligados... ya puedo unir todo el ADN genómico de mis muestras sin riesgo de contaminación! 
+>**MAS ACERCA DE NUESTRAS LIBRERIAS:** Luego de cortar nuestro genoma con las [enzimas de digestión](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/restrictiondigest.png) 'ligamos' (pegamos) los adaptadores a nuestros retazos del genoma, los cuales contienen los barcodes únicos para cada individuo - y esto lo debo llevar anotado en mi cuaderno de laboratorio!!! Pero de todas formas, yo ademas de tenerlo en mi cuaderno de lab lo tengo en el [siguiente archivo de texto](https://raw.githubusercontent.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/master/data/epi_barcodes.txt). Luego de que mis adaptadores están ligados... ya puedo unir todo el ADN genómico de mis muestras sin riesgo de contaminación! Por tanto, el primer paso en cualquier librería de representación reducida es el demultiplexing, o en otras palabras: 
+>
+>![](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/demultiplex.png)
 
 Primero, comencemos con bajarnos [el siguiente archivo del drive](https://drive.google.com/open?id=1JKd5qHq4IHRqkuZZhl0G5mQlDi_uL7jT), y ponganlo dentro del directorio `2da-practica`. Ahora, intentemos ejecutar el archivo, el cual deberia ser un 'binario' que puede correr directamente en sistemas `unix` sin necesidad de ser compilado, utilizando el siguiente código (y desde el directorio donde está el binario ejecutable):
 
@@ -240,7 +243,7 @@ Primero, comencemos con bajarnos [el siguiente archivo del drive](https://drive.
 
 	
 
->**ACERCA DE archivos ejecutables y no ejecutables.** Si luego de intentar ejecutar cualquier archivo que deberia se ejecutable (es decir, como cualquier `binario` de un programa) si la ventana del terminal te dice: 
+>**ACERCA DE archivos ejecutables y no ejecutables.** Si luego de intentar ejecutar cualquier archivo que deberia ser ejecutable (es decir, como cualquier `binario` de un programa), en la ventana del terminal sale: 
 >
 >		-bash: ./process_radtags: Permission denied
 >
@@ -260,10 +263,10 @@ Primero, comencemos con bajarnos [el siguiente archivo del drive](https://drive.
 
 Ahora arreglemos el archivo de barcodes. Por los momentos, tenemos que nuestro archivo de 'barcodes' debe contener los barcodes en la columna de la izquierda y los nombres únicos (los cuales serán utilizados por el programa para darle los nombres a cada archivo del output) en la columna de la derecha... pero que vemos?! que nuestro archivo esta al reves.... ahora, en vez de abrir el archivo en excel (que creanlo o no tomaria mas pasos para arreglarlo debido al formato), abrimos el archivo en el programa **ATOM**, el cual es un EDITOR DE TEXTO SENCILLO. 
 
->**HABLEMOS DE ARCHIVOS DE TEXTO**. Los archivos de texto complejos como hechos en word o excel contienen millones de caracteres invisibles los cuales ayudan al formateo. Pero cuando editamos archivos de texto en informática, debemos hacerlo viendo TODOS los caracteres que están detrás. Para eso usamos ATOM, el cual nos perimte visualizar caracteres invisibles. Si copiamos/pegamos el contenido de [esta pagina](https://raw.githubusercontent.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/master/data/epi_barcodes.txt) en un archivo nuevo de ATOM, podemos hacer un 'find/replace' utilizando `grep` en ATOM para rápidamente modificar el archivo a lo que queremos. 
+>**HABLEMOS DE ARCHIVOS DE TEXTO**. Los archivos de texto complejos como hechos en word o excel contienen millones de caracteres invisibles los cuales ayudan al formateo. Pero cuando editamos archivos de texto en informática, debemos hacerlo viendo TODOS los caracteres que están detrás. Para eso usamos ATOM, el cual nos permite visualizar caracteres invisibles. Si copiamos/pegamos el contenido de [esta pagina](https://raw.githubusercontent.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/master/data/epi_barcodes.txt) en un archivo nuevo de ATOM, podemos hacer un 'find/replace' utilizando `grep` en ATOM para rápidamente modificar el archivo a lo que queremos. 
 >
 >![](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/grep.png)
->A este archivo pongale el nombre `barcodes.txt` y guárdelo dentro del mismo directorio `2da-practica`. 
+>A este archivo modificado ponganle el nombre `barcodes.txt` y guárdenlo dentro del mismo directorio `2da-practica`. 
 
 Ahora finalmente podemos correr la línea de comando para hacer el 'demultiplexing': 
 
