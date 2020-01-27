@@ -267,6 +267,7 @@ Ahora arreglemos el archivo de barcodes. Por los momentos, tenemos que nuestro a
 >
 >![](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/grep.png)
 >A este archivo modificado ponganle el nombre `barcodes.txt` y guárdenlo dentro del mismo directorio `2da-practica`. 
+>NOTA: como no tenemos editor de texto instadalo en este momento en las compus de ubuntu, entonces [bajen de aca el archivo de barcodes](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/archivos/barcodes.txt) que usaremos para e paso siguiente. 
 
 Ahora finalmente podemos correr la línea de comando para hacer el 'demultiplexing': 
 
