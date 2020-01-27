@@ -270,6 +270,7 @@ Ahora arreglemos el archivo de barcodes. Por los momentos, tenemos que nuestro a
 
 Ahora finalmente podemos correr la línea de comando para hacer el 'demultiplexing': 
 
+	mkdir demultiplex
 	./process_radtags -p ./datos-crudos -b ./barcodes.txt -o ./demultiplex -c -q -r -D --inline_null --renz_1 sphI --renz_2 mluCI
 
 >Exactamente qué está sucediendo en este paso?? 
