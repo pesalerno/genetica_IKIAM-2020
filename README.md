@@ -2,7 +2,7 @@
 >Contenido de sección de introducción a la bioinformática del curso de Genetica para las Carreras de Ing. en Ecosistemas y de Ing. en Biotecnologia de la Universidad Regional Amazonica IKIAM, dictada durante el semestre Oct 2019 - Feb 2020 por la Dra. Patricia E. Salerno.
 >
 >
->**NOTA IMPORTANTE:** Este taller esta diseñado para ser totalmente autoguiado. Todo el código de este repositorio - y en general del taller de bioinfo dictado en el curso de Genética - está diseñado para funcionar en el sistema operativo que se basa en unix... es decir, **NO funciona para PC** (sistema operativo DOS) incluso utilizando un programa de interface (asi como lo es cmder). Así que, a pesar de ser bastante autoguidado, si no utiliza un sistema operativo unix/linux/ubuntu/mac el código no servirá en su totalidad. 
+>**NOTA IMPORTANTE:** Este taller esta diseñado para ser totalmente autoguiado. Todo el código de este repositorio - y en general del taller de bioinfo dictado en el curso de Genética - está diseñado para funcionar en el sistema operativo que se basa en unix... es decir, **NO funciona para PC** (sistema operativo DOS) incluso utilizando un programa de interface (asi como lo es cmder). Así que, a pesar de ser bastante autoguiado, si no utiliza un sistema operativo unix/linux/ubuntu/mac el código no servirá en su totalidad. 
 
 # lunes 20 ene | introducción a bioinfo parte 1
 
@@ -220,18 +220,69 @@ Entonces, si yo quiero regresar a mi carpeta llamada `Downloads` tengo una de do
 
 
 
- **3. Analizando la calidad de los datos y de la corrida de Illumina utilizando fastqc.** 
+
+
+********
+## 3. Comenzando a desenredar los millones de datos utilizando el `pipeline` de **stacks** 
+
+
+Stacks es un 'cuasi-programa' el cual utiliza/une programas escritos en varios lenguajes como `C++`, `Perl`, `python`, y ayuda al usuario a generar un 'pipeline' de análisis que te lleva desde secuencias crudas hasta matrices de SNPs/secuencias concatenadas, y está especialmente diseñado para genotipificar loci generados de librerías de **GBS** - y más generalmente de librerías genómicas de representación reducida generadas con enzimas de digestión. 
+
+Hoy, vamos a comenzar con el primer paso de cualquier librería de GBS, que es separar las secuencias en los individuos, lo cual hacemos a través de la secuencia única de barcode que fue asignada durante la preparación de las librerías. Recuerden que la razón principal por la cual RADseq/ddRAD son protocolos tan famosos es porque podemos hacer 'pooling' de decentas/cientos de individuos en [un mismo *'lane'*](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/pooling.png) de Illumina, ahorrándonos así miles de dólares y secuenciar una menor profundidad/porcentaje del genoma (ergo: secuenciación genómica de representación reducida).
+
+>**MAS ACERCA DE NUESTRAS LIBRERIAS:** Luego de cortar nuestro genoma con las [enzimas de digestión](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/restrictiondigest.png) 'ligamos' (pegamos) los adaptadores a nuestros retazos del genoma, los cuales contienen los barcodes únicos para cada individuo - y esto lo debo llevar anotado en mi cuaderno de laboratorio!!! Pero de todas formas, yo ademas de tenerlo en mi cuaderno de lab lo tengo en el [siguiente archivo de texto](https://raw.githubusercontent.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/master/data/epi_barcodes.txt). Luego de que mis adaptadores están ligados... ya puedo unir todo el ADN genómico de mis muestras sin riesgo de contaminación! 
+
+Primero, comencemos con bajarnos [el siguiente archivo del drive](https://drive.google.com/open?id=1JKd5qHq4IHRqkuZZhl0G5mQlDi_uL7jT), y ponganlo dentro del directorio `2da-practica`. Ahora, intentemos ejecutar el archivo, el cual deberia ser un 'binario' que puede correr directamente en sistemas `unix` sin necesidad de ser compilado, utilizando el siguiente código (y desde el directorio donde está el binario ejecutable):
+
+	./process_radtags 
+
+...y ahora?? 
+
+	
+
+>**ACERCA DE archivos ejecutables y no ejecutables.** Si luego de intentar ejecutar cualquier archivo que deberia se ejecutable (es decir, como cualquier `binario` de un programa) si la ventana del terminal te dice: 
+>
+>		-bash: ./process_radtags: Permission denied
+>
+>eso quiere decir que tu computador no tiene el permiso para ejecutar ese archivo. Por tanto debemos usar `chmod` para modificar los permisos de ese archivo: 
+>
+>		ls -ltr 
+>		##vean todo lo que dice en cuanto a permisos en la izquierda
+>		chmod +rwx process_radtags
+>		ls -ltr
+>
+>vean nuevamente la info de los permisos.... [cómo cambió??](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/chmod.png).
+>
+>Ahora el archivo debe ser ejecutable sin ningún problema, y lo pueden probar usando el mismo código: 
+>
+> 		./process_radtags
+> 
+
+Ahora arreglemos el archivo de barcodes. Por los momentos, tenemos que nuestro archivo de 'barcodes' debe contener los barcodes en la columna de la izquierda y los nombres únicos (los cuales serán utilizados por el programa para darle los nombres a cada archivo del output) en la columna de la derecha... pero que vemos?! que nuestro archivo esta al reves.... ahora, en vez de abrir el archivo en excel (que creanlo o no tomaria mas pasos para arreglarlo debido al formato), abrimos el archivo en el programa **ATOM**, el cual es un EDITOR DE TEXTO SENCILLO. 
+
+>**HABLEMOS DE ARCHIVOS DE TEXTO**. Los archivos de texto complejos como hechos en word o excel contienen millones de caracteres invisibles los cuales ayudan al formateo. Pero cuando editamos archivos de texto en informática, debemos hacerlo viendo TODOS los caracteres que están detrás. Para eso usamos ATOM, el cual nos perimte visualizar caracteres invisibles. Si copiamos/pegamos el contenido de [esta pagina](https://raw.githubusercontent.com/rdtarvin/IBS2019_Genomics-of-Biodiversity/master/data/epi_barcodes.txt) en un archivo nuevo de ATOM, podemos hacer un 'find/replace' utilizando `grep` en ATOM para rápidamente modificar el archivo a lo que queremos. 
+>
+>![](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/grep.png)
+>A este archivo pongale el nombre `barcodes.txt` y guárdelo dentro del mismo directorio `2da-practica`. 
+
+Ahora finalmente podemos correr la línea de comando para hacer el 'demultiplexing': 
+
+	./process_radtags -p ./datos-crudos -b ./barcodes.txt -o ./demultiplex -c -q -r -D --inline_null --renz_1 sphI --renz_2 mluCI
+
+**************
+ **5. Analizando la calidad de los datos y de la corrida de Illumina utilizando fastqc.** 
 ----
 
-Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
+>Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
+>
+>		cd 2da-practica
+>		mkdir programas
+>		cd programas
 
-	cd 2da-practica
-	mkdir programas
-	cd programas
-
-Luego, para instalar el programa utilicemos la línea de comando y el programa `curl` de la siguiente manera:
-	
-	curl -L -O https://www.bioinformatics.babraham.ac.uk/projects/	fastqc/fastqc_v0.11.5.zip
+>Luego, para instalar el programa utilicemos la línea de comando y el programa `curl` de la siguiente manera:
+>	
+>		curl -L -O https://www.bioinformatics.babraham.ac.uk/projects/
+>		fastqc/fastqc_v0.11.5.zip
 
 *****
 
@@ -251,42 +302,22 @@ Luego, para instalar el programa utilicemos la línea de comando y el programa `
 >
 >lo cual le pide el password, el cual es `estudiante` - y recuerde, no se vera ningun texto cuando escribe **porque el password es secreto!!**
 	
-Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe tener un nombre parecido a `fastqc_v0.11.5.zip`. Una vez descomprimido, está listo para ser usado. Para correr el programa, primero debe decifrar el directorio relativo del programa para asi poder correr el comando desde el directorio donde están los datos. Una recomendación de una manera de hacerlo fácil es abrir una ventana del buscador como ésta: 
+>Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe tener un nombre parecido a `fastqc_v0.11.5.zip`. Una vez descomprimido, está listo para ser usado. Para correr el programa, primero debe decifrar el directorio relativo del programa para asi poder correr el comando desde el directorio donde están los datos. Una recomendación de una manera de hacerlo fácil es abrir una ventana del buscador como ésta: 
 
 
 
- ![fotito](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/directorio-path.png)
+> ![fotito](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/directorio-path.png)
 
 
-Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le da el `directorio absoluto` del archivo que quiere ejecutar. 
+>Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le da el `directorio absoluto` del archivo que quiere ejecutar. 
 
 
-Una vez decifrado el path relativo desde donde tenemos guardada el archivo de las secuencias, corremos el programa fastqc para obtener los datos resumidos de calidad de la corrida de Illumina:
+>Una vez decifrado el path relativo desde donde tenemos guardada el archivo de las secuencias, corremos el programa fastqc para obtener los datos resumidos de calidad de la corrida de Illumina:
 
 
-	/Users/patriciasalerno/Documents/IKIAM/semestre_oct-2019/GENETICA/BIOINFO/GIT/genetica_IKIAM-2020/FastQC/fastqc epiddrad_5M_R1.fastq.gz
+>		/Users/patriciasalerno/Documents/IKIAM/semestre_oct-2019/GENETICA/BIOINFO/GIT/genetica_IKIAM-2020/FastQC/fastqc epiddrad_5M_R1.fastq.gz
 
-	open epiddrad_5M_R1_fastqc.html
+>		open epiddrad_5M_R1_fastqc.html
 	
 
 ---
-
-## 4. Comenzando a desenredar los millones de datos utilizando el `pipeline` de **stacks** 
-
-
-Stacks es un programa que .... etc. 
-
-
->**NOTA:** Hablemos un poco de archivos ejecutables y no ejecutables.Si luego de intentar ejecutar cualquier archivo que deberia se ejecutable (es decir, como cualquier `biniario` de un programa) si la ventana del terminal te dice: 
->
->		-bash: ./process_radtags: Permission denied
->
->eso quiere decir que tu computador no tiene el permiso para ejecutar ese archivo. Por tanto debemos usar `chmod` para modificar los permisos de ese archivo: 
->
->		ls -ltr 
->		##vean todo lo que dice en cuanto a permisos en la izquierda
->		chmod +rwx process_radtags
->		ls -ltr
->
->vean nuevamente la info de los permisos.... [cómo cambió??](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/chmod.png).Ahora el archivo debe ser ejecutable sin ningn problema. 
-
