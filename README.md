@@ -235,7 +235,7 @@ Hoy, vamos a comenzar con el primer paso de cualquier librería de GBS, que es s
 >
 >![](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/demultiplex.png)
 
-Primero, comencemos con bajarnos [el siguiente archivo del drive](https://drive.google.com/open?id=1JKd5qHq4IHRqkuZZhl0G5mQlDi_uL7jT), y ponganlo dentro del directorio `2da-practica`. Ahora, intentemos ejecutar el archivo, el cual deberia ser un 'binario' que puede correr directamente en sistemas `unix` sin necesidad de ser compilado, utilizando el siguiente código (y desde el directorio donde está el binario ejecutable):
+Primero, comencemos con bajarnos [el siguiente archivo del drive](https://drive.google.com/open?id=1LBlEjBEKv1yePaKCau9NZ5_l59mRDoAl), y ponganlo dentro del directorio `2da-practica`. Ahora, intentemos ejecutar el archivo, el cual deberia ser un 'binario' que puede correr directamente en sistemas `unix` sin necesidad de ser compilado, utilizando el siguiente código (y desde el directorio donde está el binario ejecutable):
 
 	./process_radtags 
 
