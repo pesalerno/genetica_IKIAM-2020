@@ -297,6 +297,10 @@ En este directorio puede ver los principales archivos de output de [demultiplexi
 
 >Deben entregar el documento con las respuestas en pareja, preferiblemente (y con nota asociada) en formato markdown (`.md`) o en su defecto en formato `.pdf` exportado desde un editor de MarkDown. 
 
-
+>Para tener todos los datos/archivos/documentos necesarios para la practica de hoy, haga click en el botón de `clone repository` dentro del repositorio principal del curso: 
+>
+>	https://github.com/pesalerno/genetica_IKIAM-2020
+>
+>Alli, dentro de la carpeta llamada **analisis** encontrara todos los archivos necesarios. en particular, debemos copiar el archivo `.vcf` al directorio donde se instaló el programa - *y el ejecutable* - `vcftools`. 
 
 
