@@ -2,10 +2,10 @@
 
 >Este taller debe ser entregado en pareja para el jueves 13 de Febrero a mas tardar 11pm como parte del **examen parcial II** de genética. 
 >
-**NOMBRES** | **APELLIDOS**
+NOMBRES | APELLIDOS
 -------------|--------------|
-	nombrescompletos1 | apellidoscompletoss1|
-	nombrescompletos2 | apellidoscompleto2|
+nombrescompletos1 | apellidoscompletoss1|
+nombrescompletos2 | apellidoscompleto2|
 		
 
 ## 1. Instalando **vcftools** y bajando la matriz de SNPs
