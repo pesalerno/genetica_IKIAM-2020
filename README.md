@@ -285,7 +285,7 @@ Ahora finalmente podemos correr la línea de comando para hacer el 'demultiplexi
 # lunes 10 feb | cierre bioinfo y genómica
 
 
-Al final de la preactica anterior, hicimos el demultiplexing, o separación de corridas de Illumina de acuerdo al barcode de cada individuo. Despues de este paso, estamos listos para comenzar con la genotipificación *denovo* utilizando el programa `stacks`. 
+Al final de la práctica anterior hicimos el demultiplexing, o separación de corridas de Illumina de acuerdo al barcode de cada individuo. Después de este paso, estamos listos para comenzar con la genotipificación *denovo* utilizando el programa `stacks`. LA genotipificación *denovo* no es nada sencilla, por lo que nos saltamos este paso y vamos directo al filtrado despues de que ya tenemos una matriz de SNPs sin procesar - es decir, exportada sin nada de filtros desde `stacks`, para luego filtrarla en el programa `vcftools`.  
 
 
 En este directorio puede ver los principales archivos de output de [demultiplexing](https://github.com/pesalerno/genetica_IKIAM-2020/tree/master/analisis/demultiplex), y en este otro directorio puede ver los archivos principales del [output de `denovo_map.pl` y de `populations`](https://github.com/pesalerno/genetica_IKIAM-2020/tree/master/analisis/denovo).  
@@ -293,14 +293,12 @@ En este directorio puede ver los principales archivos de output de [demultiplexi
 -----------------------------------------
 ## TALLER | filtrando la matriz de SNPs con `vcftools`
 
->Para este taller estaremos usando el [siguiente documento](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/TALLER_filtrando-SNPs.md) del **Taller de Filtrado y Genómica Poblacional** 
-
->Deben entregar el documento con las respuestas en pareja, preferiblemente (y con nota asociada) en formato markdown (`.md`) o en su defecto en formato `.pdf` exportado desde un editor de MarkDown. 
-
+>Para este taller estaremos usando otro [documento titulado **Taller de Filtrado y Genómica Poblacional**](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/TALLER_filtrando-SNPs.md). Deben entregar ese mismo documento con las respuestas en pareja para el **jueves 10pm**, preferiblemente (y con nota asociada) en formato markdown (`.md`) o en su defecto en formato `.pdf` exportado desde un editor de MarkDown. 
+>
 >Para tener todos los datos/archivos/documentos necesarios para la practica de hoy, haga click en el botón de `clone repository` dentro del repositorio principal del curso: 
 >
->	https://github.com/pesalerno/genetica_IKIAM-2020
+>	[https://github.com/pesalerno/genetica_IKIAM-2020]()
 >
->Alli, dentro de la carpeta llamada **analisis** encontrara todos los archivos necesarios. en particular, debemos copiar el archivo `.vcf` al directorio donde se instaló el programa - *y el ejecutable* - `vcftools`. 
+>Alli, dentro de la carpeta llamada **analisis** encontraran todos los archivos necesarios para la práctica. En particular, debemos copiar el archivo `.vcf` al directorio local - en sus computadores - donde se instaló el programa - *y el ejecutable* - `vcftools`. 
 
 
