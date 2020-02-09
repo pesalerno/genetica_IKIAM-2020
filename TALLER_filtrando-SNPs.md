@@ -1,4 +1,4 @@
-# TALLER | filtrando la matriz de SNPs
+# TALLER | Filtrado y Genómica Poblacional
 
 >Este taller debe ser entregado en pareja para el jueves 13 de Febrero a mas tardar 11pm como parte del **examen parcial II** de genética. 
 >
@@ -31,4 +31,57 @@ Luego, obtenemos nuestra [matriz de datos de este link]() y ponemos ese archivo 
 
 ______________
 
+## 2. Corriendo los filtros básicos en plink. 
 
+Primero, queremos asegurarnos de no tener un monton de SNPs que no tienen nada de información y roban mucho tiempo de computación, por lo que eliminamos los SNPs que estan presentes solo en pocos individuos: 
+
+	./vcftools --vcf populations.snps.vcf --max-missing 0.5 --recode --out filtered-snps-1
+
+>-------------------------
+>**PREGUNTA 1: cuántos loci se retienen luego de este primer filtro:**
+>
+>**RESPUESTA:** 
+>
+>---------------------------
+>
+>**PREGUNTA 2: que exactamente estamos haciendo con el comando `--max-missing` de `vcftools`?**
+>
+>**RESPUESTA:** 
+>
+>------------------------
+>
+
+Segundo, queremos asegurarnos de no retener SNPs poco informativos y con alto potencial de ser simple reflejo de error, por lo que filtramos SNPs que tengan frecuencia alelica menor al 0.02: 
+
+	./vcftools --vcf filtered-snps-1.vcf --maf 0.02 --recode --out filtered-snps-2
+	
+>---------------------
+>**PREGUNTA 3: Cuantos loci se retienen luego de este filtro?** 
+>
+>**RESPUESTA:** 
+>
+>---------------------------
+
+Ahora, queremos ver si algo cambia si en vez de utilizar frecuencia alelica usamos simplemtente "cuenta" alélica, es decir, veces totales que se cuenta el alelo menor (*sin importar tamaño de la muestra*): 
+
+	./vcftools --vcf filtered-snps-1.recode.vcf --mac 1 --recode --out filtered-snps-2
+
+>---------------------
+>**PREGUNTA 4: Cuántos loci se retienen luego de este filtro?** 
+>
+>**RESPUESTA:** 
+>
+>---------------------------
+>**PREGUNTA 5: Qué pasa si aumentamos a conteo alélico de 2?** 
+>
+>**RESPUESTA:** 
+>
+>---------------------------
+
+Quedémonos con la última matriz generada, obtenida con el filtro `--mac 2` para asegurarnos que no tenemos nada que sea cerca de cero informativo para inferencias estadísticas, ya que tenemos bastantes SNPs retenidos.
+
+---------------------
+
+## 3. Estimando y filtrando Linkage Disequilibrium
+
+Ahora, queremos estimar  

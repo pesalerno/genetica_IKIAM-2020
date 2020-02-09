@@ -281,54 +281,22 @@ Ahora finalmente podemos correr la línea de comando para hacer el 'demultiplexi
 
 **************
 
- **5. Analizando la calidad de los datos y de la corrida de Illumina utilizando fastqc.** 
-----
 
->Primero, bajemos e instalemos el programa [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), y guardemoslo dentro de un directorio llamado `programas` dentro del directorio `BIOINFO-genetica`. Este programa se ha vuelto un estándard de informe de calidad de una corrida de secuenciación de "high-throughput", así como lo es [Illumina](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
->
->		cd 2da-practica
->		mkdir programas
->		cd programas
+# lunes 10 feb | cierre bioinfo y genómica
 
->Luego, para instalar el programa utilicemos la línea de comando y el programa `curl` de la siguiente manera:
->	
->		curl -L -O https://www.bioinformatics.babraham.ac.uk/projects/
->		fastqc/fastqc_v0.11.5.zip
 
-*****
+Al final de la preactica anterior, hicimos el demultiplexing, o separación de corridas de Illumina de acuerdo al barcode de cada individuo. Despues de este paso, estamos listos para comenzar con la genotipificación *denovo* utilizando el programa `stacks`. 
 
->**NOTA:** Puede que su computador no tenga la version de java necesaria para correr la visualización de la calidad de la corrida, por lo que tendría que bajarse la instalación en [esta pagina web](https://www.oracle.com/technetwork/java/javase/downloads/jdk13-downloads-5672538.html) y escogiendo (haciendo click) en el archivo que se llama `jda-13.0.2_linux-x64_bin.tax.gz`, y luego escribiendo en el directorio donde se lo bajo: 
->
->		tar xfvz jda-13.0.2_linux-x64_bin.tax.gz
->
->lo cual descomprimirá el archivo 
->
->		./configure
->		./make
->		./make install
->		
->y si ese ultimo comando no funciona, entonces utilice el siguiente comando: 
->
->		./sudo make install 
->
->lo cual le pide el password, el cual es `estudiante` - y recuerde, no se vera ningun texto cuando escribe **porque el password es secreto!!**
-	
->Dentro de su carpeta de `programas`, descomprima el archivo descargado que debe tener un nombre parecido a `fastqc_v0.11.5.zip`. Una vez descomprimido, está listo para ser usado. Para correr el programa, primero debe decifrar el directorio relativo del programa para asi poder correr el comando desde el directorio donde están los datos. Una recomendación de una manera de hacerlo fácil es abrir una ventana del buscador como ésta: 
+
+En este directorio puede ver los principales archivos de output de [demultiplexing](https://github.com/pesalerno/genetica_IKIAM-2020/tree/master/analisis/demultiplex), y en este otro directorio puede ver los archivos principales del [output de `denovo_map.pl` y de `populations`](https://github.com/pesalerno/genetica_IKIAM-2020/tree/master/analisis/denovo).  
+
+-----------------------------------------
+## TALLER | filtrando la matriz de SNPs con `vcftools`
+
+>Para este taller estaremos usando el [siguiente documento](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/TALLER_filtrando-SNPs.md) del **Taller de Filtrado y Genómica Poblacional** 
+
+>Deben entregar el documento con las respuestas en pareja, preferiblemente (y con nota asociada) en formato markdown (`.md`) o en su defecto en formato `.pdf` exportado desde un editor de MarkDown. 
 
 
 
-> ![fotito](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/fotos/directorio-path.png)
 
-
->Y "jalar" el nombre del archivo completo hasta la ventana de terminal, lo que le da el `directorio absoluto` del archivo que quiere ejecutar. 
-
-
->Una vez decifrado el path relativo desde donde tenemos guardada el archivo de las secuencias, corremos el programa fastqc para obtener los datos resumidos de calidad de la corrida de Illumina:
-
-
->		/Users/patriciasalerno/Documents/IKIAM/semestre_oct-2019/GENETICA/BIOINFO/GIT/genetica_IKIAM-2020/FastQC/fastqc epiddrad_5M_R1.fastq.gz
-
->		open epiddrad_5M_R1_fastqc.html
-	
-
----
