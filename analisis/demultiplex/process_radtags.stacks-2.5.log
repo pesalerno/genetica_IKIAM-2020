@@ -1,0 +1,26 @@
+process_radtags v2.5, executed 2020-02-09 13:00:49 (zlib-1.2.11)
+process_radtags -P -p . -b ./barcodes.txt -o ./demultiplex -c -q -r -D --inline_null --renz_1 sphI --renz_2 mluCI
+File	Retained Reads	Low Quality	Barcode Not Found	RAD cutsite Not Found	Total
+
+Total Sequences	0
+Barcode Not Found	0
+Low Quality	0
+RAD Cutsite Not Found	0
+Retained Reads	0
+
+Barcode	Filename	Total	NoRadTag	LowQuality	Retained
+GCATG	Etri_T6836	0	0	0	0
+AACCA	Etri_T6842	0	0	0	0
+CGATC	Eant_T6857	0	0	0	0
+TCGAT	Eant_T6859a	0	0	0	0
+TGCAT	Eant_T6859b	0	0	0	0
+CAACC	Ahah_R0089a	0	0	0	0
+GGTTG	Ahah_R0089b	0	0	0	0
+AAGGA	Ahah_R0090	0	0	0	0
+AGCTA	Ebou_R0153	0	0	0	0
+ACACA	Ebou_R0156	0	0	0	0
+AATTA	Snub_R0158	0	0	0	0
+ACGGT	Snub_R0159	0	0	0	0
+
+Sequences not recorded
+Barcode	Total
