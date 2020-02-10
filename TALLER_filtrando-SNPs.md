@@ -48,7 +48,7 @@ Primero, queremos asegurarnos de no tener un montón de SNPs que no tienen nada 
 
 Observe el log que se imprime en la pantalla, o en su defecto haga use el comando `cat` para observar el archivo de `logfile` del análisis. 
 >-------------------------
->**PREGUNTA 1: Con cuántos loci comenzamos este análisis, y cuántos loci se retienen luego de este primer filtro:**
+>**PREGUNTA 1: Con cuántos loci comenzamos este análisis, y cuántos loci se retienen luego de este primer filtro?**
 >
 >**RESPUESTA:** 
 >
@@ -110,7 +110,7 @@ ___________________________
 >
 >---------------------------
 
-Ahora, queremos excluir los loci que no están en equilibrio Hardy-Weinberg, ya que nos interesa analizar loci potencialmente neutrales para observar procesos demográficos como lo son la endogamia producto de tamaño poblaicona reducido. Entonces, primero, excluimos loci que no están en HW equilibrium pasado en un p valor de 0.05:
+Ahora, queremos excluir los loci que no están en equilibrio Hardy-Weinberg, ya que nos interesa analizar loci potencialmente neutrales para observar procesos demográficos como lo son la endogamia producto de tamaño poblacional reducido. Entonces, primero, excluimos loci que no están en HW equilibrium pasado en un p valor de 0.05:
 
 	./vcftools --vcf filtered-snps-2.recode.vcf --hwe 0.05 --recode --out filtered-snps-3
 
@@ -136,7 +136,7 @@ ___________________________
 > **PROBLEMA**: Nuevamente utilizando sus capacidades de construcción de hojas de datos, genere una tabla donde compare la endogamia entre especies usando el promedio entre individuos por especie obtenido con `--het` antes y despues de excluir loci que no estaban en equilibrio Hardy-Weinberg. La designación de especie está dada en el [popmap](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/analisis/denovo/popmap.txt) que se usó durante la genotipificación en `stacks`. 
 > 
 >---------------------------
->**PREGUNTA 9: Discuta por qué pudiese ocurrir esta discrepancia entre heterocigosidad ?** 
+>**PREGUNTA 9: Discuta brevemente por qué pudiese existir esta discrepancia entre endogamia estimada con loci antes y despues de excluir por equilibrio Hardy-Weinberg?** 
 >
 >**RESPUESTA:** 
 >
