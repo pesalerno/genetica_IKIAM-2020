@@ -34,7 +34,7 @@ Si todo sale bien, deberiamos ya tener `vcftools` instalado dentro del `bin` de 
 
 	./bin/vcftools 
 
-Luego, obtenemos nuestra matriz de datos del respositorio clonado de git (que también deberían poner dentro del directorio `3ra-practica` y ponemos ese archivo (con terminacion `.vcf`) dentro de la misma carpeta donde esta vcftools. 
+Luego, obtenemos nuestra matriz de datos del respositorio clonado de git (que también deberían poner dentro del directorio `3ra-practica` y ponemos [este archivo](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/analisis/denovo/populations.snps.vcf) (con terminacion `.vcf`) dentro de la misma carpeta donde esta vcftools. 
 
 >En [este link](https://vcftools.github.io/man_latest.html) puede encontrar el manual completo de `vcftools` y todo lo que puede hacer con el programa. 
 
@@ -133,7 +133,7 @@ Lo cual nos da el archivo `out.het` que contiene los valores F, los cuales son e
 >
 >---------------------------
 ___________________________
-> **PROBLEMA**: Nuevamente utilizando sus capacidades de construcción de hojas de datos, genere una tabla donde compare la endogamia entre especies usando el promedio entre individuos por especie obtenido con `--het` antes y despues de excluir loci que no estaban en equilibrio Hardy-Weinberg. La designación de especie está dada en el [popmap]() que se usó durante la genotipificación en `stacks`. 
+> **PROBLEMA**: Nuevamente utilizando sus capacidades de construcción de hojas de datos, genere una tabla donde compare la endogamia entre especies usando el promedio entre individuos por especie obtenido con `--het` antes y despues de excluir loci que no estaban en equilibrio Hardy-Weinberg. La designación de especie está dada en el [popmap](https://github.com/pesalerno/genetica_IKIAM-2020/blob/master/analisis/denovo/popmap.txt) que se usó durante la genotipificación en `stacks`. 
 > 
 >---------------------------
 >**PREGUNTA 9: Discuta por qué pudiese ocurrir esta discrepancia entre heterocigosidad ?** 
