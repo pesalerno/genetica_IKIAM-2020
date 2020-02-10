@@ -1,0 +1,1194 @@
+denovo_map.pl version 2.5 started at 2020-02-09 13:14:59
+/usr/local/bin/denovo_map.pl -T 2 -m 3 -M 2 -n 3 -o ./denovo --samples ./demultiplex --popmap popmap.txt
+
+ustacks
+==========
+
+Sample 1 of 12 'Etri_T6836'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Etri_T6836.fq.gz -o ./denovo -i 1 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Etri_T6836.fq.gz'
+  Sample ID: 1
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 496585 reads; formed:
+  39385 stacks representing 248411 primary reads (50.0%)
+  219429 secondary stacks representing 248174 secondary reads (50.0%)
+
+Stack coverage: mean=6.31; stdev=27.90; max=2568; n_reads=248411(50.0%)
+Removing repetitive stacks: cov > 91 (mean+3*stdev)...
+  Blacklisted 1678 stacks.
+Coverage after repeat removal: mean=5.22; stdev=4.07; max=91; n_reads=196850(39.6%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 37707 stacks into 33160; blacklisted 240 stacks.
+Coverage after assembling stacks: mean=5.37; stdev=3.76; max=108; n_reads=176316(35.5%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 33800 out of 248174 secondary reads (13.6%), 3593 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=6.39; stdev=5.72; max=221; n_reads=210116(42.3%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 33160 stacks into 32714 stacks.
+Coverage after gapped assembly: mean=6.48; stdev=5.92; max=221; n_reads=210116(42.3%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 6677 out of 214374 secondary reads (3.1%).
+Coverage after merging gapped secondary stacks: mean=6.69; stdev=7.81; max=442; n_reads=216793(43.7%)
+
+Final coverage: mean=6.69; stdev=7.81; max=442; n_reads=216793(43.7%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 2 of 12 'Etri_T6842'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Etri_T6842.fq.gz -o ./denovo -i 2 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Etri_T6842.fq.gz'
+  Sample ID: 2
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 427656 reads; formed:
+  33500 stacks representing 203966 primary reads (47.7%)
+  196962 secondary stacks representing 223690 secondary reads (52.3%)
+
+Stack coverage: mean=6.09; stdev=28.73; max=2762; n_reads=203966(47.7%)
+Removing repetitive stacks: cov > 93 (mean+3*stdev)...
+  Blacklisted 1512 stacks.
+Coverage after repeat removal: mean=5.00; stdev=4.10; max=93; n_reads=159836(37.4%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 31988 stacks into 28229; blacklisted 202 stacks.
+Coverage after assembling stacks: mean=5.06; stdev=3.65; max=115; n_reads=141584(33.1%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 28267 out of 223690 secondary reads (12.6%), 3181 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=6.07; stdev=6.48; max=530; n_reads=169851(39.7%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 28229 stacks into 27908 stacks.
+Coverage after gapped assembly: mean=6.14; stdev=6.66; max=530; n_reads=169851(39.7%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 5749 out of 195423 secondary reads (2.9%).
+Coverage after merging gapped secondary stacks: mean=6.35; stdev=8.19; max=631; n_reads=175600(41.1%)
+
+Final coverage: mean=6.35; stdev=8.19; max=631; n_reads=175600(41.1%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 3 of 12 'Eant_T6857'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Eant_T6857.fq.gz -o ./denovo -i 3 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Eant_T6857.fq.gz'
+  Sample ID: 3
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 467739 reads; formed:
+  39186 stacks representing 218771 primary reads (46.8%)
+  219564 secondary stacks representing 248968 secondary reads (53.2%)
+
+Stack coverage: mean=5.58; stdev=20.31; max=1792; n_reads=218771(46.8%)
+Removing repetitive stacks: cov > 67 (mean+3*stdev)...
+  Blacklisted 1344 stacks.
+Coverage after repeat removal: mean=4.94; stdev=3.13; max=66; n_reads=186904(40.0%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 37842 stacks into 32926; blacklisted 214 stacks.
+Coverage after assembling stacks: mean=5.24; stdev=3.31; max=84; n_reads=171184(36.6%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 35401 out of 248968 secondary reads (14.2%), 3922 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=6.33; stdev=5.73; max=343; n_reads=206585(44.2%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 32926 stacks into 32395 stacks.
+Coverage after gapped assembly: mean=6.43; stdev=5.99; max=343; n_reads=206585(44.2%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 6721 out of 213567 secondary reads (3.1%).
+Coverage after merging gapped secondary stacks: mean=6.64; stdev=7.49; max=435; n_reads=213306(45.6%)
+
+Final coverage: mean=6.64; stdev=7.49; max=435; n_reads=213306(45.6%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 4 of 12 'Eant_T6859a'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Eant_T6859a.fq.gz -o ./denovo -i 4 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Eant_T6859a.fq.gz'
+  Sample ID: 4
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 436769 reads; formed:
+  36173 stacks representing 197423 primary reads (45.2%)
+  210598 secondary stacks representing 239346 secondary reads (54.8%)
+
+Stack coverage: mean=5.46; stdev=18.92; max=1653; n_reads=197423(45.2%)
+Removing repetitive stacks: cov > 63 (mean+3*stdev)...
+  Blacklisted 1284 stacks.
+Coverage after repeat removal: mean=4.79; stdev=3.04; max=63; n_reads=167044(38.2%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 34889 stacks into 30581; blacklisted 212 stacks.
+Coverage after assembling stacks: mean=5.05; stdev=3.07; max=69; n_reads=152927(35.0%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 33339 out of 239346 secondary reads (13.9%), 3506 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=6.15; stdev=6.30; max=408; n_reads=186266(42.6%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 30581 stacks into 30136 stacks.
+Coverage after gapped assembly: mean=6.24; stdev=6.51; max=408; n_reads=186266(42.6%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 6605 out of 206007 secondary reads (3.2%).
+Coverage after merging gapped secondary stacks: mean=6.46; stdev=8.29; max=416; n_reads=192871(44.2%)
+
+Final coverage: mean=6.46; stdev=8.29; max=416; n_reads=192871(44.2%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 5 of 12 'Eant_T6859b'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Eant_T6859b.fq.gz -o ./denovo -i 5 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Eant_T6859b.fq.gz'
+  Sample ID: 5
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 373494 reads; formed:
+  31077 stacks representing 164105 primary reads (43.9%)
+  182802 secondary stacks representing 209389 secondary reads (56.1%)
+
+Stack coverage: mean=5.28; stdev=18.04; max=1467; n_reads=164105(43.9%)
+Removing repetitive stacks: cov > 60 (mean+3*stdev)...
+  Blacklisted 1111 stacks.
+Coverage after repeat removal: mean=4.62; stdev=2.91; max=60; n_reads=138559(37.1%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 29966 stacks into 26499; blacklisted 179 stacks.
+Coverage after assembling stacks: mean=4.83; stdev=2.96; max=100; n_reads=126932(34.0%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 28327 out of 209389 secondary reads (13.5%), 2969 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=5.91; stdev=5.64; max=326; n_reads=155259(41.6%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 26499 stacks into 26135 stacks.
+Coverage after gapped assembly: mean=6.00; stdev=5.82; max=330; n_reads=155259(41.6%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 6075 out of 181062 secondary reads (3.4%).
+Coverage after merging gapped secondary stacks: mean=6.23; stdev=7.74; max=381; n_reads=161334(43.2%)
+
+Final coverage: mean=6.23; stdev=7.74; max=381; n_reads=161334(43.2%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 6 of 12 'Ahah_R0089a'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Ahah_R0089a.fq.gz -o ./denovo -i 6 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Ahah_R0089a.fq.gz'
+  Sample ID: 6
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 475513 reads; formed:
+  37553 stacks representing 211353 primary reads (44.4%)
+  233882 secondary stacks representing 264160 secondary reads (55.6%)
+
+Stack coverage: mean=5.63; stdev=20.91; max=1817; n_reads=211353(44.4%)
+Removing repetitive stacks: cov > 69 (mean+3*stdev)...
+  Blacklisted 873 stacks.
+Coverage after repeat removal: mean=4.96; stdev=3.58; max=68; n_reads=181952(38.3%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 36680 stacks into 32806; blacklisted 274 stacks.
+Coverage after assembling stacks: mean=5.04; stdev=3.43; max=116; n_reads=163547(34.4%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 32878 out of 264160 secondary reads (12.4%), 3929 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=6.05; stdev=5.46; max=376; n_reads=196425(41.3%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 32806 stacks into 32431 stacks.
+Coverage after gapped assembly: mean=6.12; stdev=5.69; max=376; n_reads=196425(41.3%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 6279 out of 231282 secondary reads (2.7%).
+Coverage after merging gapped secondary stacks: mean=6.32; stdev=6.97; max=437; n_reads=202704(42.6%)
+
+Final coverage: mean=6.32; stdev=6.97; max=437; n_reads=202704(42.6%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 7 of 12 'Ahah_R0089b'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Ahah_R0089b.fq.gz -o ./denovo -i 7 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Ahah_R0089b.fq.gz'
+  Sample ID: 7
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 445946 reads; formed:
+  33807 stacks representing 185003 primary reads (41.5%)
+  231079 secondary stacks representing 260943 secondary reads (58.5%)
+
+Stack coverage: mean=5.47; stdev=20.07; max=1538; n_reads=185003(41.5%)
+Removing repetitive stacks: cov > 66 (mean+3*stdev)...
+  Blacklisted 822 stacks.
+Coverage after repeat removal: mean=4.79; stdev=3.38; max=65; n_reads=157945(35.4%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 32985 stacks into 29675; blacklisted 224 stacks.
+Coverage after assembling stacks: mean=4.86; stdev=3.30; max=85; n_reads=142720(32.0%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 29775 out of 260943 secondary reads (11.4%), 3319 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=5.87; stdev=5.58; max=341; n_reads=172495(38.7%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 29675 stacks into 29368 stacks.
+Coverage after gapped assembly: mean=5.93; stdev=5.84; max=341; n_reads=172495(38.7%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 5755 out of 231168 secondary reads (2.5%).
+Coverage after merging gapped secondary stacks: mean=6.13; stdev=7.33; max=449; n_reads=178250(40.0%)
+
+Final coverage: mean=6.13; stdev=7.33; max=449; n_reads=178250(40.0%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 8 of 12 'Ahah_R0090'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Ahah_R0090.fq.gz -o ./denovo -i 8 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Ahah_R0090.fq.gz'
+  Sample ID: 8
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 429301 reads; formed:
+  33499 stacks representing 187698 primary reads (43.7%)
+  213207 secondary stacks representing 241603 secondary reads (56.3%)
+
+Stack coverage: mean=5.60; stdev=22.82; max=2120; n_reads=187698(43.7%)
+Removing repetitive stacks: cov > 75 (mean+3*stdev)...
+  Blacklisted 775 stacks.
+Coverage after repeat removal: mean=4.89; stdev=3.89; max=75; n_reads=159949(37.3%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 32724 stacks into 29478; blacklisted 229 stacks.
+Coverage after assembling stacks: mean=4.91; stdev=3.69; max=102; n_reads=143378(33.4%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 29523 out of 241603 secondary reads (12.2%), 3291 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=5.92; stdev=5.87; max=310; n_reads=172901(40.3%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 29478 stacks into 29146 stacks.
+Coverage after gapped assembly: mean=5.99; stdev=6.12; max=310; n_reads=172901(40.3%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 5316 out of 212080 secondary reads (2.5%).
+Coverage after merging gapped secondary stacks: mean=6.18; stdev=7.23; max=374; n_reads=178217(41.5%)
+
+Final coverage: mean=6.18; stdev=7.23; max=374; n_reads=178217(41.5%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 9 of 12 'Ebou_R0153'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Ebou_R0153.fq.gz -o ./denovo -i 9 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Ebou_R0153.fq.gz'
+  Sample ID: 9
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 387517 reads; formed:
+  33035 stacks representing 179362 primary reads (46.3%)
+  181690 secondary stacks representing 208155 secondary reads (53.7%)
+
+Stack coverage: mean=5.43; stdev=25.21; max=3021; n_reads=179362(46.3%)
+Removing repetitive stacks: cov > 82 (mean+3*stdev)...
+  Blacklisted 1139 stacks.
+Coverage after repeat removal: mean=4.81; stdev=3.46; max=81; n_reads=153488(39.6%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 31896 stacks into 27712; blacklisted 202 stacks.
+Coverage after assembling stacks: mean=4.94; stdev=3.15; max=121; n_reads=135632(35.0%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 28866 out of 208155 secondary reads (13.9%), 3058 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=5.99; stdev=5.23; max=217; n_reads=164498(42.4%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 27712 stacks into 27300 stacks.
+Coverage after gapped assembly: mean=6.08; stdev=5.45; max=217; n_reads=164498(42.4%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 6998 out of 179289 secondary reads (3.9%).
+Coverage after merging gapped secondary stacks: mean=6.34; stdev=7.21; max=330; n_reads=171496(44.3%)
+
+Final coverage: mean=6.34; stdev=7.21; max=330; n_reads=171496(44.3%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 10 of 12 'Ebou_R0156'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Ebou_R0156.fq.gz -o ./denovo -i 10 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Ebou_R0156.fq.gz'
+  Sample ID: 10
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 300567 reads; formed:
+  24321 stacks representing 123959 primary reads (41.2%)
+  153137 secondary stacks representing 176608 secondary reads (58.8%)
+
+Stack coverage: mean=5.10; stdev=21.64; max=2252; n_reads=123959(41.2%)
+Removing repetitive stacks: cov > 71 (mean+3*stdev)...
+  Blacklisted 884 stacks.
+Coverage after repeat removal: mean=4.51; stdev=3.16; max=70; n_reads=105640(35.1%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 23437 stacks into 20699; blacklisted 152 stacks.
+Coverage after assembling stacks: mean=4.56; stdev=2.80; max=83; n_reads=93655(31.2%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 21547 out of 176608 secondary reads (12.2%), 1914 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=5.61; stdev=4.90; max=167; n_reads=115202(38.3%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 20699 stacks into 20480 stacks.
+Coverage after gapped assembly: mean=5.67; stdev=5.10; max=167; n_reads=115202(38.3%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 5819 out of 155061 secondary reads (3.8%).
+Coverage after merging gapped secondary stacks: mean=5.96; stdev=6.89; max=236; n_reads=121021(40.3%)
+
+Final coverage: mean=5.96; stdev=6.89; max=236; n_reads=121021(40.3%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 11 of 12 'Snub_R0158'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Snub_R0158.fq.gz -o ./denovo -i 11 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Snub_R0158.fq.gz'
+  Sample ID: 11
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 392268 reads; formed:
+  32775 stacks representing 189486 primary reads (48.3%)
+  180460 secondary stacks representing 202782 secondary reads (51.7%)
+
+Stack coverage: mean=5.78; stdev=11.79; max=1364; n_reads=189486(48.3%)
+Removing repetitive stacks: cov > 42 (mean+3*stdev)...
+  Blacklisted 863 stacks.
+Coverage after repeat removal: mean=5.28; stdev=3.07; max=42; n_reads=168584(43.0%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 31912 stacks into 28365; blacklisted 230 stacks.
+Coverage after assembling stacks: mean=5.47; stdev=3.18; max=57; n_reads=153435(39.1%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 29550 out of 202782 secondary reads (14.6%), 2648 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=6.53; stdev=5.04; max=238; n_reads=182985(46.6%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 28365 stacks into 27994 stacks.
+Coverage after gapped assembly: mean=6.62; stdev=5.29; max=265; n_reads=182985(46.6%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 5717 out of 173232 secondary reads (3.3%).
+Coverage after merging gapped secondary stacks: mean=6.82; stdev=6.47; max=316; n_reads=188702(48.1%)
+
+Final coverage: mean=6.82; stdev=6.47; max=316; n_reads=188702(48.1%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Sample 12 of 12 'Snub_R0159'
+----------
+/usr/local/bin/ustacks -t gzfastq -f ./demultiplex/Snub_R0159.fq.gz -o ./denovo -i 12 -m 3 -p 2 -M 2
+ustacks parameters selected:
+  Input file: './demultiplex/Snub_R0159.fq.gz'
+  Sample ID: 12
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 247197 reads; formed:
+  20961 stacks representing 105648 primary reads (42.7%)
+  124043 secondary stacks representing 141549 secondary reads (57.3%)
+
+Stack coverage: mean=5.04; stdev=9.72; max=921; n_reads=105648(42.7%)
+Removing repetitive stacks: cov > 35 (mean+3*stdev)...
+  Blacklisted 629 stacks.
+Coverage after repeat removal: mean=4.55; stdev=2.35; max=33; n_reads=92516(37.4%)
+
+Assembling stacks (max. dist. M=2)...
+  Assembled 20332 stacks into 18501; blacklisted 138 stacks.
+Coverage after assembling stacks: mean=4.66; stdev=2.54; max=51; n_reads=85083(34.4%)
+
+Merging secondary stacks (max. dist. N=4 from consensus)...
+  Merged 18052 out of 141549 secondary reads (12.8%), 1484 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=5.65; stdev=4.87; max=192; n_reads=103135(41.7%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 18501 stacks into 18303 stacks.
+Coverage after gapped assembly: mean=5.71; stdev=5.13; max=201; n_reads=103135(41.7%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 3896 out of 123497 secondary reads (3.2%).
+Coverage after merging gapped secondary stacks: mean=5.92; stdev=6.34; max=243; n_reads=107031(43.3%)
+
+Final coverage: mean=5.92; stdev=6.34; max=243; n_reads=107031(43.3%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files...
+Refetching read IDs...done.
+ustacks is done.
+
+Depths of Coverage for Processed Samples:
+Etri_T6836: 6.69x
+Etri_T6842: 6.35x
+Eant_T6857: 6.64x
+Eant_T6859a: 6.46x
+Eant_T6859b: 6.23x
+Ahah_R0089a: 6.32x
+Ahah_R0089b: 6.13x
+Ahah_R0090: 6.18x
+Ebou_R0153: 6.34x
+Ebou_R0156: 5.96x
+Snub_R0158: 6.82x
+Snub_R0159: 5.92x
+
+cstacks
+==========
+/usr/local/bin/cstacks -P ./denovo -p 2 -n 3 -M popmap.txt
+
+cstacks parameters selected:
+  Loci matched based on sequence identity.
+  Number of mismatches allowed between stacks: 3
+  Gapped alignments: enabled
+Constructing catalog from 12 samples.
+
+Initializing new catalog...
+  Parsing ./denovo/Etri_T6836.tags.tsv.gz
+  Parsing ./denovo/Etri_T6836.snps.tsv.gz
+  Parsing ./denovo/Etri_T6836.alleles.tsv.gz
+  32412 loci were newly added to the catalog.
+
+Processing sample ./denovo/Etri_T6842 [2 of 12]
+  Parsing ./denovo/Etri_T6842.tags.tsv.gz
+  Parsing ./denovo/Etri_T6842.snps.tsv.gz
+  Parsing ./denovo/Etri_T6842.alleles.tsv.gz
+Searching for sequence matches...
+  32412 loci in the catalog, 3253719 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  13588 loci were matched to a catalog locus.
+  2151 loci were matched to a catalog locus using gapped alignments.
+  12108 loci were newly added to the catalog.
+  181 loci matched more than one catalog locus, linking them.
+    304 linked catalog loci were merged into 121 loci.
+
+Processing sample ./denovo/Eant_T6857 [3 of 12]
+  Parsing ./denovo/Eant_T6857.tags.tsv.gz
+  Parsing ./denovo/Eant_T6857.snps.tsv.gz
+  Parsing ./denovo/Eant_T6857.alleles.tsv.gz
+Searching for sequence matches...
+  44337 loci in the catalog, 4622509 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  4626 loci were matched to a catalog locus.
+  3006 loci were matched to a catalog locus using gapped alignments.
+  24648 loci were newly added to the catalog.
+  152 loci matched more than one catalog locus, linking them.
+    233 linked catalog loci were merged into 79 loci.
+
+Processing sample ./denovo/Eant_T6859a [4 of 12]
+  Parsing ./denovo/Eant_T6859a.tags.tsv.gz
+  Parsing ./denovo/Eant_T6859a.snps.tsv.gz
+  Parsing ./denovo/Eant_T6859a.alleles.tsv.gz
+Searching for sequence matches...
+  68831 loci in the catalog, 7286831 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  13316 loci were matched to a catalog locus.
+  3931 loci were matched to a catalog locus using gapped alignments.
+  12796 loci were newly added to the catalog.
+  181 loci matched more than one catalog locus, linking them.
+    313 linked catalog loci were merged into 127 loci.
+
+Processing sample ./denovo/Eant_T6859b [5 of 12]
+  Parsing ./denovo/Eant_T6859b.tags.tsv.gz
+  Parsing ./denovo/Eant_T6859b.snps.tsv.gz
+  Parsing ./denovo/Eant_T6859b.alleles.tsv.gz
+Searching for sequence matches...
+  81441 loci in the catalog, 8810940 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  17062 loci were matched to a catalog locus.
+  3463 loci were matched to a catalog locus using gapped alignments.
+  5537 loci were newly added to the catalog.
+  167 loci matched more than one catalog locus, linking them.
+    309 linked catalog loci were merged into 139 loci.
+
+Processing sample ./denovo/Ahah_R0089a [6 of 12]
+  Parsing ./denovo/Ahah_R0089a.tags.tsv.gz
+  Parsing ./denovo/Ahah_R0089a.snps.tsv.gz
+  Parsing ./denovo/Ahah_R0089a.alleles.tsv.gz
+Searching for sequence matches...
+  86808 loci in the catalog, 9468739 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  78 loci were matched to a catalog locus.
+  71 loci were matched to a catalog locus using gapped alignments.
+  31930 loci were newly added to the catalog.
+  0 loci matched more than one catalog locus, linking them.
+    0 linked catalog loci were merged into 0 loci.
+
+Processing sample ./denovo/Ahah_R0089b [7 of 12]
+  Parsing ./denovo/Ahah_R0089b.tags.tsv.gz
+  Parsing ./denovo/Ahah_R0089b.snps.tsv.gz
+  Parsing ./denovo/Ahah_R0089b.alleles.tsv.gz
+Searching for sequence matches...
+  118738 loci in the catalog, 12678585 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  17024 loci were matched to a catalog locus.
+  1694 loci were matched to a catalog locus using gapped alignments.
+  10477 loci were newly added to the catalog.
+  122 loci matched more than one catalog locus, linking them.
+    229 linked catalog loci were merged into 106 loci.
+
+Processing sample ./denovo/Ahah_R0090 [8 of 12]
+  Parsing ./denovo/Ahah_R0090.tags.tsv.gz
+  Parsing ./denovo/Ahah_R0090.snps.tsv.gz
+  Parsing ./denovo/Ahah_R0090.alleles.tsv.gz
+Searching for sequence matches...
+  129092 loci in the catalog, 13787230 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  18039 loci were matched to a catalog locus.
+  2558 loci were matched to a catalog locus using gapped alignments.
+  8393 loci were newly added to the catalog.
+  132 loci matched more than one catalog locus, linking them.
+    248 linked catalog loci were merged into 115 loci.
+
+Processing sample ./denovo/Ebou_R0153 [9 of 12]
+  Parsing ./denovo/Ebou_R0153.tags.tsv.gz
+  Parsing ./denovo/Ebou_R0153.snps.tsv.gz
+  Parsing ./denovo/Ebou_R0153.alleles.tsv.gz
+Searching for sequence matches...
+  137352 loci in the catalog, 14749778 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  1565 loci were matched to a catalog locus.
+  2188 loci were matched to a catalog locus using gapped alignments.
+  23424 loci were newly added to the catalog.
+  101 loci matched more than one catalog locus, linking them.
+    166 linked catalog loci were merged into 59 loci.
+
+Processing sample ./denovo/Ebou_R0156 [10 of 12]
+  Parsing ./denovo/Ebou_R0156.tags.tsv.gz
+  Parsing ./denovo/Ebou_R0156.snps.tsv.gz
+  Parsing ./denovo/Ebou_R0156.alleles.tsv.gz
+Searching for sequence matches...
+  160669 loci in the catalog, 17064103 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  9416 loci were matched to a catalog locus.
+  2697 loci were matched to a catalog locus using gapped alignments.
+  8375 loci were newly added to the catalog.
+  170 loci matched more than one catalog locus, linking them.
+    308 linked catalog loci were merged into 125 loci.
+
+Processing sample ./denovo/Snub_R0158 [11 of 12]
+  Parsing ./denovo/Snub_R0158.tags.tsv.gz
+  Parsing ./denovo/Snub_R0158.snps.tsv.gz
+  Parsing ./denovo/Snub_R0158.alleles.tsv.gz
+Searching for sequence matches...
+  168861 loci in the catalog, 17997095 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  229 loci were matched to a catalog locus.
+  241 loci were matched to a catalog locus using gapped alignments.
+  27191 loci were newly added to the catalog.
+  6 loci matched more than one catalog locus, linking them.
+    13 linked catalog loci were merged into 6 loci.
+
+Processing sample ./denovo/Snub_R0159 [12 of 12]
+  Parsing ./denovo/Snub_R0159.tags.tsv.gz
+  Parsing ./denovo/Snub_R0159.snps.tsv.gz
+  Parsing ./denovo/Snub_R0159.alleles.tsv.gz
+Searching for sequence matches...
+  196045 loci in the catalog, 20708786 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  11105 loci were matched to a catalog locus.
+  1491 loci were matched to a catalog locus using gapped alignments.
+  5618 loci were newly added to the catalog.
+  128 loci matched more than one catalog locus, linking them.
+    235 linked catalog loci were merged into 100 loci.
+
+Writing catalog in directory './denovo/'.
+Final catalog contains 201528 loci.
+cstacks is done.
+
+sstacks
+==========
+/usr/local/bin/sstacks -P ./denovo -p 2 -M popmap.txt
+
+Searching for matches by sequence identity...
+  Parsing ./denovo/catalog.tags.tsv.gz
+  Parsing ./denovo/catalog.snps.tsv.gz
+  Parsing ./denovo/catalog.alleles.tsv.gz
+Populating kmer dictionary for exact matches...done.
+Populating kmer dictionary for gapped alignments...done.
+
+Processing sample './denovo/Etri_T6836' [1 of 12]
+  Parsing ./denovo/Etri_T6836.tags.tsv.gz
+  Parsing ./denovo/Etri_T6836.snps.tsv.gz
+  Parsing ./denovo/Etri_T6836.alleles.tsv.gz
+Searching for sequence matches...
+32412 sample loci compared against the catalog containing 201528 loci.
+  28848 matching loci, 18 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  18 loci contained SNPs unaccounted for in the catalog and were excluded.
+  31376 total haplotypes examined from matching loci, 31358 verified.
+Searching for gapped alignments...
+Out of 32412 query loci, 3582 gapped alignments attempted.
+  2991 loci matched one catalog locus; 4847 total haplotypes examined, 3750 verified.
+  591 loci matched no catalog locus;
+    32 loci matched more than one catalog locus and were excluded.
+    29 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Etri_T6836.matches.tsv.gz
+
+Processing sample './denovo/Etri_T6842' [2 of 12]
+  Parsing ./denovo/Etri_T6842.tags.tsv.gz
+  Parsing ./denovo/Etri_T6842.snps.tsv.gz
+  Parsing ./denovo/Etri_T6842.alleles.tsv.gz
+Searching for sequence matches...
+27658 sample loci compared against the catalog containing 201528 loci.
+  23968 matching loci, 13 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  13 loci contained SNPs unaccounted for in the catalog and were excluded.
+  25887 total haplotypes examined from matching loci, 25874 verified.
+Searching for gapped alignments...
+Out of 27658 query loci, 3703 gapped alignments attempted.
+  2897 loci matched one catalog locus; 4836 total haplotypes examined, 3518 verified.
+  806 loci matched no catalog locus;
+    26 loci matched more than one catalog locus and were excluded.
+    30 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Etri_T6842.matches.tsv.gz
+
+Processing sample './denovo/Eant_T6857' [3 of 12]
+  Parsing ./denovo/Eant_T6857.tags.tsv.gz
+  Parsing ./denovo/Eant_T6857.snps.tsv.gz
+  Parsing ./denovo/Eant_T6857.alleles.tsv.gz
+Searching for sequence matches...
+32111 sample loci compared against the catalog containing 201528 loci.
+  27609 matching loci, 29 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  29 loci contained SNPs unaccounted for in the catalog and were excluded.
+  30925 total haplotypes examined from matching loci, 30895 verified.
+Searching for gapped alignments...
+Out of 32111 query loci, 4531 gapped alignments attempted.
+  3517 loci matched one catalog locus; 5999 total haplotypes examined, 4359 verified.
+  1014 loci matched no catalog locus;
+    30 loci matched more than one catalog locus and were excluded.
+    46 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Eant_T6857.matches.tsv.gz
+
+Processing sample './denovo/Eant_T6859a' [4 of 12]
+  Parsing ./denovo/Eant_T6859a.tags.tsv.gz
+  Parsing ./denovo/Eant_T6859a.snps.tsv.gz
+  Parsing ./denovo/Eant_T6859a.alleles.tsv.gz
+Searching for sequence matches...
+29850 sample loci compared against the catalog containing 201528 loci.
+  25694 matching loci, 25 contained no verified haplotypes.
+  1 loci matched more than one catalog locus and were excluded.
+  24 loci contained SNPs unaccounted for in the catalog and were excluded.
+  28857 total haplotypes examined from matching loci, 28830 verified.
+Searching for gapped alignments...
+Out of 29850 query loci, 4181 gapped alignments attempted.
+  3519 loci matched one catalog locus; 5543 total haplotypes examined, 4358 verified.
+  662 loci matched no catalog locus;
+    31 loci matched more than one catalog locus and were excluded.
+    36 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Eant_T6859a.matches.tsv.gz
+
+Processing sample './denovo/Eant_T6859b' [5 of 12]
+  Parsing ./denovo/Eant_T6859b.tags.tsv.gz
+  Parsing ./denovo/Eant_T6859b.snps.tsv.gz
+  Parsing ./denovo/Eant_T6859b.alleles.tsv.gz
+Searching for sequence matches...
+25889 sample loci compared against the catalog containing 201528 loci.
+  22164 matching loci, 6 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  6 loci contained SNPs unaccounted for in the catalog and were excluded.
+  24844 total haplotypes examined from matching loci, 24838 verified.
+Searching for gapped alignments...
+Out of 25889 query loci, 3731 gapped alignments attempted.
+  3178 loci matched one catalog locus; 4816 total haplotypes examined, 3898 verified.
+  553 loci matched no catalog locus;
+    16 loci matched more than one catalog locus and were excluded.
+    20 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Eant_T6859b.matches.tsv.gz
+
+Processing sample './denovo/Ahah_R0089a' [6 of 12]
+  Parsing ./denovo/Ahah_R0089a.tags.tsv.gz
+  Parsing ./denovo/Ahah_R0089a.snps.tsv.gz
+  Parsing ./denovo/Ahah_R0089a.alleles.tsv.gz
+Searching for sequence matches...
+32079 sample loci compared against the catalog containing 201528 loci.
+  30451 matching loci, 3 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  3 loci contained SNPs unaccounted for in the catalog and were excluded.
+  33236 total haplotypes examined from matching loci, 33232 verified.
+Searching for gapped alignments...
+Out of 32079 query loci, 1631 gapped alignments attempted.
+  1486 loci matched one catalog locus; 2309 total haplotypes examined, 2037 verified.
+  145 loci matched no catalog locus;
+    12 loci matched more than one catalog locus and were excluded.
+    9 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Ahah_R0089a.matches.tsv.gz
+
+Processing sample './denovo/Ahah_R0089b' [7 of 12]
+  Parsing ./denovo/Ahah_R0089b.tags.tsv.gz
+  Parsing ./denovo/Ahah_R0089b.snps.tsv.gz
+  Parsing ./denovo/Ahah_R0089b.alleles.tsv.gz
+Searching for sequence matches...
+29067 sample loci compared against the catalog containing 201528 loci.
+  27125 matching loci, 6 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  6 loci contained SNPs unaccounted for in the catalog and were excluded.
+  29496 total haplotypes examined from matching loci, 29488 verified.
+Searching for gapped alignments...
+Out of 29067 query loci, 1948 gapped alignments attempted.
+  1764 loci matched one catalog locus; 2649 total haplotypes examined, 2310 verified.
+  184 loci matched no catalog locus;
+    17 loci matched more than one catalog locus and were excluded.
+    9 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Ahah_R0089b.matches.tsv.gz
+
+Processing sample './denovo/Ahah_R0090' [8 of 12]
+  Parsing ./denovo/Ahah_R0090.tags.tsv.gz
+  Parsing ./denovo/Ahah_R0090.snps.tsv.gz
+  Parsing ./denovo/Ahah_R0090.alleles.tsv.gz
+Searching for sequence matches...
+28850 sample loci compared against the catalog containing 201528 loci.
+  26928 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  29253 total haplotypes examined from matching loci, 29253 verified.
+Searching for gapped alignments...
+Out of 28850 query loci, 1922 gapped alignments attempted.
+  1817 loci matched one catalog locus; 2486 total haplotypes examined, 2309 verified.
+  105 loci matched no catalog locus;
+    6 loci matched more than one catalog locus and were excluded.
+    5 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Ahah_R0090.matches.tsv.gz
+
+Processing sample './denovo/Ebou_R0153' [9 of 12]
+  Parsing ./denovo/Ebou_R0153.tags.tsv.gz
+  Parsing ./denovo/Ebou_R0153.snps.tsv.gz
+  Parsing ./denovo/Ebou_R0153.alleles.tsv.gz
+Searching for sequence matches...
+27065 sample loci compared against the catalog containing 201528 loci.
+  24213 matching loci, 17 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  17 loci contained SNPs unaccounted for in the catalog and were excluded.
+  26776 total haplotypes examined from matching loci, 26758 verified.
+Searching for gapped alignments...
+Out of 27065 query loci, 2869 gapped alignments attempted.
+  2151 loci matched one catalog locus; 3898 total haplotypes examined, 2710 verified.
+  718 loci matched no catalog locus;
+    17 loci matched more than one catalog locus and were excluded.
+    31 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Ebou_R0153.matches.tsv.gz
+
+Processing sample './denovo/Ebou_R0156' [10 of 12]
+  Parsing ./denovo/Ebou_R0156.tags.tsv.gz
+  Parsing ./denovo/Ebou_R0156.snps.tsv.gz
+  Parsing ./denovo/Ebou_R0156.alleles.tsv.gz
+Searching for sequence matches...
+20300 sample loci compared against the catalog containing 201528 loci.
+  17982 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  19826 total haplotypes examined from matching loci, 19826 verified.
+Searching for gapped alignments...
+Out of 20300 query loci, 2318 gapped alignments attempted.
+  1975 loci matched one catalog locus; 3023 total haplotypes examined, 2452 verified.
+  343 loci matched no catalog locus;
+    9 loci matched more than one catalog locus and were excluded.
+    7 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Ebou_R0156.matches.tsv.gz
+
+Processing sample './denovo/Snub_R0158' [11 of 12]
+  Parsing ./denovo/Snub_R0158.tags.tsv.gz
+  Parsing ./denovo/Snub_R0158.snps.tsv.gz
+  Parsing ./denovo/Snub_R0158.alleles.tsv.gz
+Searching for sequence matches...
+27654 sample loci compared against the catalog containing 201528 loci.
+  26782 matching loci, 2 contained no verified haplotypes.
+  2 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  29353 total haplotypes examined from matching loci, 29348 verified.
+Searching for gapped alignments...
+Out of 27654 query loci, 874 gapped alignments attempted.
+  800 loci matched one catalog locus; 1279 total haplotypes examined, 1127 verified.
+  74 loci matched no catalog locus;
+    9 loci matched more than one catalog locus and were excluded.
+    3 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Snub_R0158.matches.tsv.gz
+
+Processing sample './denovo/Snub_R0159' [12 of 12]
+  Parsing ./denovo/Snub_R0159.tags.tsv.gz
+  Parsing ./denovo/Snub_R0159.snps.tsv.gz
+  Parsing ./denovo/Snub_R0159.alleles.tsv.gz
+Searching for sequence matches...
+18072 sample loci compared against the catalog containing 201528 loci.
+  16964 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  18349 total haplotypes examined from matching loci, 18349 verified.
+Searching for gapped alignments...
+Out of 18072 query loci, 1108 gapped alignments attempted.
+  1043 loci matched one catalog locus; 1457 total haplotypes examined, 1328 verified.
+  65 loci matched no catalog locus;
+    9 loci matched more than one catalog locus and were excluded.
+    3 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file ./denovo/Snub_R0159.matches.tsv.gz
+
+sstacks is done.
+
+tsv2bam
+==========
+/usr/local/bin/tsv2bam -P ./denovo  -t 2 -M popmap.txt
+
+Logging to './denovo/tsv2bam.log'.
+Configuration for this run:
+  Stacks directory: './denovo/'
+  Population map: 'popmap.txt'
+  Num. samples: 12
+  Multithreaded.
+
+Loading the catalog...
+Processing sample 'Etri_T6836'...
+Processing sample 'Etri_T6842'...
+Processing sample 'Eant_T6857'...
+Processing sample 'Eant_T6859a'...
+Processing sample 'Eant_T6859b'...
+Processing sample 'Ahah_R0089a'...
+Processing sample 'Ahah_R0089b'...
+Processing sample 'Ahah_R0090'...
+Processing sample 'Ebou_R0153'...
+Processing sample 'Ebou_R0156'...
+Processing sample 'Snub_R0158'...
+Processing sample 'Snub_R0159'...
+
+Sample 'Etri_T6836': matched 31816 sample loci to 31618 catalog loci; wrote 206215 records.
+Sample 'Etri_T6842': matched 26846 sample loci to 26180 catalog loci; wrote 163739 records.
+Sample 'Eant_T6857': matched 31092 sample loci to 30355 catalog loci; wrote 200207 records.
+Sample 'Eant_T6859a': matched 29180 sample loci to 28115 catalog loci; wrote 183465 records.
+Sample 'Eant_T6859b': matched 25327 sample loci to 24410 catalog loci; wrote 153542 records.
+Sample 'Ahah_R0089a': matched 31932 sample loci to 31736 catalog loci; wrote 199820 records.
+Sample 'Ahah_R0089b': matched 28879 sample loci to 28275 catalog loci; wrote 174560 records.
+Sample 'Ahah_R0090': matched 28737 sample loci to 27978 catalog loci; wrote 176187 records.
+Sample 'Ebou_R0153': matched 26333 sample loci to 25699 catalog loci; wrote 162017 records.
+Sample 'Ebou_R0156': matched 19947 sample loci to 19223 catalog loci; wrote 115993 records.
+Sample 'Snub_R0158': matched 27575 sample loci to 27407 catalog loci; wrote 186260 records.
+Sample 'Snub_R0159': matched 18005 sample loci to 17552 catalog loci; wrote 105574 records.
+
+tsv2bam is done.
+
+gstacks
+==========
+/usr/local/bin/gstacks -P ./denovo -t 2 -M popmap.txt
+
+Logging to './denovo/gstacks.log'.
+Locus/sample distributions will be written to './denovo/gstacks.log.distribs'.
+
+Configuration for this run:
+  Input mode: denovo
+  Population map: 'popmap.txt'
+  Input files: 12, e.g. './denovo/Etri_T6836.matches.bam'
+  Output to: './denovo/'
+  Model: marukilow (var_alpha: 0.01, gt_alpha: 0.05)
+
+Reading BAM headers...
+Processing all loci...
+1%...
+2%...
+5%...
+10%...
+20%...
+50%...
+100%
+Input appears to be single-end (no paired-end reads were seen).
+
+Genotyped 199474 loci:
+  effective per-sample coverage: mean=7.1x, stdev=0.4x, min=6.3x, max=7.7x
+  mean number of sites per locus: 145.1
+  a consistent phasing was found for 11138 of out 11940 (93.3%) diploid loci needing phasing
+
+gstacks is done.
+
+populations
+==========
+/usr/local/bin/populations -P ./denovo -t 2 -M popmap.txt
+
+Logging to './denovo/populations.log'.
+Locus/sample distributions will be written to './denovo/populations.log.distribs'.
+populations parameters selected:
+  Percent samples limit per population: 0
+  Locus Population limit: 1
+  Percent samples overall: 0
+  Minor allele frequency cutoff: 0
+  Maximum observed heterozygosity cutoff: 1
+  Applying Fst correction: none.
+  Pi/Fis kernel smoothing: off
+  Fstats kernel smoothing: off
+  Bootstrap resampling: off
+
+Parsing population map...
+The population map contained 12 samples, 5 population(s), 1 group(s).
+Working on 12 samples.
+Working on 5 population(s):
+    Etri: Etri_T6836, Etri_T6842
+    Eant: Eant_T6857, Eant_T6859a, Eant_T6859b
+    Ahah: Ahah_R0089a, Ahah_R0089b, Ahah_R0090
+    Ebou: Ebou_R0153, Ebou_R0156
+    Snub: Snub_R0158, Snub_R0159
+Working on 1 group(s) of populations:
+    defaultgrp: Etri, Eant, Ahah, Ebou, Snub
+
+Raw haplotypes will be written to './denovo/populations.haplotypes.tsv'
+Population-level summary statistics will be written to './denovo/populations.sumstats.tsv'
+Population-level haplotype summary statistics will be written to './denovo/populations.hapstats.tsv'
+
+Processing data in batches:
+  * load a batch of catalog loci and apply filters
+  * compute SNP- and haplotype-wise per-population statistics
+  * write the above statistics in the output files
+  * export the genotypes/haplotypes in specified format(s)
+More details in './denovo/populations.log.distribs'.
+Now processing...
+Batch 1 
+Batch 2 
+Batch 3 
+Batch 4 
+Batch 5 
+Batch 6 
+Batch 7 
+Batch 8 
+Batch 9 
+Batch 10 
+Batch 11 
+Batch 12 
+Batch 13 
+Batch 14 
+Batch 15 
+Batch 16 
+Batch 17 
+Batch 18 
+Batch 19 
+Batch 20 
+
+Removed 0 loci that did not pass sample/population constraints from 199474 loci.
+Kept 199474 loci, composed of 28943165 sites; 0 of those sites were filtered, 62686 variant sites remained.
+Mean genotyped sites per locus: 145.10bp (stderr 0.00).
+
+Population summary statistics (more detail in populations.sumstats_summary.tsv):
+  Etri: 1.5888 samples per locus; pi: 0.19234; all/variant/polymorphic sites: 6298308/29480/8718; private alleles: 4377
+  Eant: 2.1894 samples per locus; pi: 0.29076; all/variant/polymorphic sites: 7332284/37530/18966; private alleles: 6857
+  Ahah: 2.4013 samples per locus; pi: 0.54118; all/variant/polymorphic sites: 7252185/9696/9071; private alleles: 241
+  Ebou: 1.5947 samples per locus; pi: 0.26882; all/variant/polymorphic sites: 5001056/16612/6757; private alleles: 3000
+  Snub: 1.7655 samples per locus; pi: 0.47414; all/variant/polymorphic sites: 4761380/5724/4223; private alleles: 577
+Populations is done.
+denovo_map.pl is done.
+
+denovo_map.pl completed at 2020-02-09 13:57:28
